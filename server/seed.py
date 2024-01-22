@@ -22,11 +22,9 @@ if __name__ == "__main__":
         Badge.query.delete()
 
         print("Creating climbers...")
-        # Need to create climbers:
-        # shack = Restaurant(name="Karen's Pizza Shack", address="address1")
-        # bistro = Restaurant(name="Sanjay's Pizza", address="address2")
-        # palace = Restaurant(name="Kiki's Pizza", address="address3")
-        # restaurants = [shack, bistro, palace]
+        climber1 = Climber(name="Meaghan", email="meaghan@test.com", password="test")
+        climber2 = Climber(name="Eileen", email="eileen@test.com", password="test")
+        climbers = [climber1, climber2]
 
         print("Creating mountains...")
         # Need to create mountains

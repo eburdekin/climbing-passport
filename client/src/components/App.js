@@ -12,10 +12,13 @@ function App() {
         <Route exact path="/mountains">
           <Explore />
         </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
         <Route exact path="/badges">
           <ClimbingPassport />
         </Route>
-        <Route exact path="/home">
+        <Route exact path="/">
           <Logout />
         </Route>
         <Route exact path="/login">

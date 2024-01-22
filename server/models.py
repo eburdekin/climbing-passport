@@ -22,7 +22,8 @@ class Climber(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    skill_level = db.Column(db.Integer, nullable=False)
+    email = db.Column(db.String, nullable=False)
+    password = db.Column(db.String, nullable=False)
 
     # Relationships
 

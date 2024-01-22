@@ -43,7 +43,8 @@ class Climbers(Resource):
         new_climber = Climber()
         try:
             new_climber.name = data.get("name")
-            new_climber.skill_level = data.get("skill_level")
+            new_climber.email = data.get("email")
+            new_climber.password = data.get("password")
             db.session.add(new_climber)
             db.session.commit()
             return make_response(new_climber.to_dict(), 201)
@@ -76,7 +77,8 @@ class ClimbersById(Resource):
         data = request.get_json()
         try:
             setattr(climber, "name", data["name"])
-            setattr(climber, "skill_level", data["skill_level"])
+            setattr(climber, "email", data["email"])
+            setattr(climber, "password", data["password"])
             db.session.add(climber)
             db.session.commit()
             return (
