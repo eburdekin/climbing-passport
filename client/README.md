@@ -2,7 +2,7 @@
 
 </br>
 
-<img src="src/images/Option2.png" />
+<img src="src/images/Homepage.png" />
 
 <p>"Send It!" is a project designed for climbers to create and manage their personalized climbing passports. Similar to the functionality of popular platforms like AllTrails, this application empowers users to explore a map, discover mountains of interest, and add them to their climbing badge collection. Each badge represents a climb attempted or completed, forming a unique climbing passport for the user.
 <p>
