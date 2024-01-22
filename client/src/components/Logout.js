@@ -7,7 +7,7 @@ function Logout() {
     <div>
       <h1>Send It!</h1>
       <p>
-        Welcome to 'Send It!' – Your Personal Climbing Passport!
+        Welcome to 'Send It!', Your Personal Climbing Passport!
         <br />
         Explore mountains and add them to your badge collection to create a
         unique climbing passport to showcase your achievements. If a badge needs
