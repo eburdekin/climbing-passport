@@ -47,4 +47,5 @@ If the delete button is clicked, the badge will automatically be removed from th
 Takes the user back to the personalized homepage.
 
 <h3>Logout</h3>
+</br>
 Takes the user back to the original home page, where they will be prompted to log in or create a new account.
