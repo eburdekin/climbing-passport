@@ -33,19 +33,18 @@ Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain
 <h1>Using this Program</h1>
 
 <h3>Home</h1>
-Prompts a user to log into an existing account or create a new one. The user is unable to navigate to the various tabs unless logged in. Once logged in, the home page will welcome the user and they can navigate to the various tabs as needed.
+<p>Prompts a user to log into an existing account or create a new one. The user is unable to navigate to the various tabs unless logged in. Once logged in, the home page will welcome the user and they can navigate to the various tabs as needed.</p>
 
 <h3>Explore</h3>
-The user can add a new climb to their badges and explore various climbs using the world map and mountain list. Once the plus sign next to the mountain is clicked, a modal will populate and they will be prompted to add the date, whether the climb has been completed or not, climber ID, and mountain ID. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab.
+<p>The user can add a new climb to their badges and explore various climbs using the world map and mountain list. Once the plus sign next to the mountain is clicked, a modal will populate and they will be prompted to add the date, whether the climb has been completed or not, climber ID, and mountain ID. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab.</p>
 
 <h3>My Climbing Passport</h3>
-This page contains a collection of all the user's badges. A badge can be edited or deleted on this page. If the update button is selected, a modal will populate and the user can edit the existing information. Once this information is saved, it will automatically update on the page.
-
-If the delete button is clicked, the badge will automatically be removed from the page.
+<p>This page contains a collection of all the user's badges. A badge can be edited or deleted on this page. If the update button is selected, a modal will populate and the user can edit the existing information. Once this information is saved, it will automatically update on the page.
+</p>
+<p>If the delete button is clicked, the badge will automatically be removed from the page.</p>
 
 <h3>Send It!</h3>
-Takes the user back to the personalized homepage.
+<p>Takes the user back to the personalized homepage.</p>
 
 <h3>Logout</h3>
-</br>
-Takes the user back to the original home page, where they will be prompted to log in or create a new account.
+<p>Takes the user back to the original home page, where they will be prompted to log in or create a new account.</p>
