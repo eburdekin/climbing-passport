@@ -5,23 +5,12 @@ function Home() {
   /* NavBar is on this page */
   return (
     <div>
-      <h1>Send It!</h1>
-      <p>
-        Welcome to 'Send It!'- Your Personal Climbing Passport!
-        <br />
-        Whether bouldering, sport climbing, or top roping, 'Send It!' is your
-        go-to companion for tracking, sharing and celebrating your climbing
-        adventures.
-        <br />
-        Explore mountains and add them to your badge collection to create a
-        unique climbing passport to showcase your achievements. If a badge needs
-        to be updated or deleted, this can be done with the click of a button.
-        <br />
-        Let the ascent begin!
-      </p>
-      <h3>Existing user?</h3>
+      <header>{/* Mountain photo with logo in the middle*/}</header>
+      <h2>Let the ascent begin.</h2>
+      <br />
+      <h3>Existing users:</h3>
       {/* This form will already be on the page. User submits email and password to log in. After submitting, user is taken to /login */}
-      <h3>New user?</h3>
+      <h3>New users:</h3>
       {/* This form will already be on the page. User submits new email and password to log in. After submitting, user is taken to /login */}
     </div>
   );

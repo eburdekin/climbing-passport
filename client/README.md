@@ -20,6 +20,7 @@ Contains the following components:
 
 <ul>
     <li>App.js</li>
+    <li>About.js</li>
     <li>ClimbingPassport.js</li>
     <li>Explore.js</li>
     <li>Home.js</li>
@@ -38,6 +39,9 @@ Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain
 
 <h3>Home</h1>
 <p>Prompts a user to log into an existing account or create a new one. The user is unable to navigate to the various tabs unless logged in. Once logged in, the home page will welcome the user and they can navigate to the various tabs as needed.</p>
+
+<h3>About</h3>
+<p>Explains the functionalities of the website.
 
 <h3>Explore</h3>
 <p>The user can add a new climb to their badges and explore various climbs using the world map and mountain list. Once the plus sign next to the mountain is clicked, a modal will populate and they will be prompted to add the date, whether the climb has been completed or not, climber ID, and mountain ID. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab.</p>
