@@ -17,9 +17,9 @@ if __name__ == "__main__":
         # so you can run the seed file multiple times without having duplicate entries in your database
 
         print("Deleting data...")
-        # Climber.query.delete()
-        # Mountain.query.delete()
-        # Badge.query.delete()
+        Climber.query.delete()
+        Mountain.query.delete()
+        Badge.query.delete()
 
         print("Creating climbers...")
         climber1 = Climber(name="Meaghan", email="meaghan@test.com", password="test")
