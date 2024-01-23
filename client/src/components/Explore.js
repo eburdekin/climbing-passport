@@ -1,13 +1,28 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
+import Header from "./Header";
+import Mountain from "./Mountain";
 
 function Explore() {
-  /* NavBar is on this page */
+  const [mountains, setMountains] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/mountains")
+      .then((r) => r.json())
+      .then(setMountains);
+  }, []);
+
   return (
-    <div>
-      <h1>Search</h1>
-      {/* Can add a new badge on this page by clicking the plus sign next to the climbing area name. A modal pops up to submit the new badge */}
-    </div>
+    <>
+      <Header />
+      <NavBar />
+      <div>
+        <h1>Search</h1>
+        {mountains.map((mountain) => (
+          <Mountain mountain={mountain} />
+        ))}
+      </div>
+    </>
   );
 }
 
