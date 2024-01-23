@@ -4,7 +4,7 @@
 
 <img src="src/images/Homepage.png" />
 
-<p>"Send It!" is a project designed for climbers to create and manage their personalized climbing passports. Similar to the functionality of popular platforms like AllTrails, this application empowers users to explore a map, discover mountains of interest, and add them to their climbing badge collection. Each badge represents a climb attempted or completed, forming a unique climbing passport for the user.
+<p>"Send It!" is a project designed for climbers to create and manage their personalized climbing passports. Similar to the functionality of popular platforms like AllTrails and MountainProject, this application empowers users to explore a map, discover climbing areas of interest, and add them to their climbing badge collection. Each badge represents a climb attempted or completed, forming a unique climbing passport for the user.
 <p>
 Built using React for the frontend and Python for the backend, "Send It!" seamlessly combines an intuitive user interface with powerful functionality. Climbers can not only add new badges but also edit or delete existing ones, providing a dynamic and customizable experience. Whether tracking conquered summits or planning future adventures, "Send It!" is the ideal companion for climbers passionate about documenting and sharing their climbing journey.
 </p>
