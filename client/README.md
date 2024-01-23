@@ -19,8 +19,8 @@ Built using React for the frontend and Python for the backend, "Send It!" seamle
 Contains the following components:
 
 <ul>
-    <li>App.js</li>
     <li>About.js</li>
+    <li>App.js</li>
     <li>ClimbingPassport.js</li>
     <li>Explore.js</li>
     <li>Home.js</li>
@@ -31,7 +31,7 @@ Contains the following components:
 
 <h3>Server</h3>
 
-Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain(s) through Badge(s), a Mountain has many Climber(s) through Badge(s), and a Badge belongs to a Climber and belongs to a Mountain. All of a climber's badges are contained on the frontend as a collection called Climbing Passport.
+Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain(s) through Badge(s), a Mountain has many Climber(s) through Badge(s), and a Badge belongs to a Climber and belongs to a Mountain. All of a climber's badges are contained on the frontend as a collection in the My Climbing Passport tab.
 
 <img src="src/images/Relationships.png" />
 
@@ -44,7 +44,7 @@ Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain
 <p>Explains the functionalities of the website.
 
 <h3>Explore</h3>
-<p>The user can add a new climb to their badges and explore various climbs using the world map and mountain list. Once the plus sign next to the mountain is clicked, a modal will populate and they will be prompted to add the date, whether the climb has been completed or not, climber ID, and mountain ID. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab.</p>
+<p>The user can add a new badge to their climbing passport and explore various climbs using the map and crag area list. Once the plus sign next to the specific climb is clicked, a modal will populate and they will be prompted to add the date and whether the climb has been completed or not. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab and include the climber_id and mountain_id on the backend.</p>
 
 <h3>My Climbing Passport</h3>
 <p>This page contains a collection of all the user's badges. A badge can be edited or deleted on this page. If the update button is selected, a modal will populate and the user can edit the existing information. Once this information is saved, it will automatically update on the page.

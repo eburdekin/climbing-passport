@@ -6,7 +6,7 @@ function Explore() {
   return (
     <div>
       <h1>Search</h1>
-      {/* Can add a new badge on this page by clicking the plus sign next to the mountain. A modal pops up to submit the new badge */}
+      {/* Can add a new badge on this page by clicking the plus sign next to the climbing area name. A modal pops up to submit the new badge */}
     </div>
   );
 }

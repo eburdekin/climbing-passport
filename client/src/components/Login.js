@@ -6,7 +6,7 @@ function Login() {
   return (
     <div>
       <h1>Welcome Climber {user}!</h1>
-      <p>Time to work on those projects</p>
+      <p>Time to work on those projects.</p>
     </div>
   );
 }
