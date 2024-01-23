@@ -6,16 +6,6 @@ from sqlalchemy.orm import validates
 from datetime import datetime
 from config import db
 
-metadata = MetaData(
-    naming_convention={
-        "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
-    }
-)
-
-db = SQLAlchemy(metadata=metadata)
-
-# Models go here!
-
 
 class Climber(db.Model, SerializerMixin):
     __tablename__ = "climbers"
@@ -64,7 +54,7 @@ class Mountain(db.Model, SerializerMixin):
 
     @validates("type")
     def validate_type(self, key, value):
-        allowed_types = {"Sport", "Bouldering", "Trad", "Top rope"}
+        allowed_types = {"Sport", "Bouldering", "Trad"}
         if value not in allowed_types:
             raise ValueError(
                 f"Invalid mountain type. Allowed types are: {', '.join(allowed_types)}"
@@ -79,7 +69,7 @@ class Badge(db.Model, SerializerMixin):
     __tablename__ = "badges"
 
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.Integer, nullable=False)
+    date = db.Column(db.String, nullable=False)
     completed = db.Column(db.String, nullable=False)
 
     # Foreign keys
