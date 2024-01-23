@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+<h1>Send It! - Your Personal Climbing Passport</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</br>
 
-## Available Scripts
+<img src="src/images/Homepage.png" />
 
-In the project directory, you can run:
+<p>"Send It!" is a project designed for climbers to create and manage their personalized climbing passports. Similar to the functionality of popular platforms like AllTrails and MountainProject, this application empowers users to explore a map, discover climbing areas of interest, and add them to their climbing badge collection. Each badge represents a climb attempted or completed, forming a unique climbing passport for the user.
+<p>
+Built using React for the frontend and Python for the backend, "Send It!" seamlessly combines an intuitive user interface with powerful functionality. Climbers can not only add new badges but also edit or delete existing ones, providing a dynamic and customizable experience. Whether tracking conquered summits or planning future adventures, "Send It!" is the ideal companion for climbers passionate about documenting and sharing their climbing journey.
+</p>
+</p>
 
-### `npm start`
+<p>Created and built by Eileen Burdekin and Meaghan Sharrard.</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h1>Project Details</h1>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h3>Client</h3>
 
-### `npm test`
+Contains the following components:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<ul>
+    <li>About.js</li>
+    <li>App.js</li>
+    <li>ClimbingPassport.js</li>
+    <li>Explore.js</li>
+    <li>Home.js</li>
+    <li>Login.js</li>
+    <li>Logout.js</li>
+    <li>NavBar.js</li>
+</ul>
 
-### `npm run build`
+<h3>Server</h3>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain(s) through Badge(s), a Mountain has many Climber(s) through Badge(s), and a Badge belongs to a Climber and belongs to a Mountain. All of a climber's badges are contained on the frontend as a collection in the My Climbing Passport tab.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="src/images/Relationships.png" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h1>Using this Program</h1>
 
-### `npm run eject`
+<h3>Home</h1>
+<p>Prompts a user to log into an existing account or create a new one. The user is unable to navigate to the various tabs unless logged in. Once logged in, the home page will welcome the user and they can navigate to the various tabs as needed.</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h3>About</h3>
+<p>Explains the functionalities of the website.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>Explore</h3>
+<p>The user can add a new badge to their climbing passport and explore various climbs using the map and crag area list. Once the plus sign next to the specific climb is clicked, a modal will populate and they will be prompted to add the date and whether the climb has been completed or not. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab and include the climber_id and mountain_id on the backend.</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<h3>My Climbing Passport</h3>
+<p>This page contains a collection of all the user's badges. A badge can be edited or deleted on this page. If the update button is selected, a modal will populate and the user can edit the existing information. Once this information is saved, it will automatically update on the page.
+</p>
+<p>If the delete button is clicked, the badge will automatically be removed from the page.</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<h3>Send It!</h3>
+<p>Takes the user back to the personalized homepage.</p>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h3>Logout</h3>
+<p>Takes the user back to the original home page, where they will be prompted to log in or create a new account.</p>
