@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Logout() {
   /* NavBar is on this page */
   return (
     <div>
@@ -16,4 +16,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Logout;
