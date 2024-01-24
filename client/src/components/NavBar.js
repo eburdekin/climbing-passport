@@ -17,6 +17,7 @@ function NavBar() {
     textDecoration: "none",
     margin: "5px",
   };
+
   return (
     <>
       <div style={navStyle}>
@@ -34,6 +35,7 @@ function NavBar() {
         </NavLink>
       </div>
       <img src="https://i.ibb.co/HtKpR0D/hero.jpg" alt="hero"></img>
+      <img src="/logo.png" alt="logo"></img>
     </>
   );
 }

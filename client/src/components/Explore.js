@@ -7,7 +7,7 @@ function Explore() {
   const [mountains, setMountains] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/mountains")
+    fetch("/mountains")
       .then((r) => r.json())
       .then(setMountains);
   }, []);
@@ -19,7 +19,7 @@ function Explore() {
       <div>
         <h1>Search</h1>
         {mountains.map((mountain) => (
-          <Mountain mountain={mountain} />
+          <Mountain key={mountain.id} mountain={mountain} />
         ))}
       </div>
     </>
