@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import Explore from "./Explore";
-import About from "./About";
-import ClimbingPassport from "./ClimbingPassport";
+import Home from "../pages/Home";
+import Explore from "../pages/Explore";
+import About from "../pages/About";
+import ClimbingPassport from "../pages/ClimbingPassport";
 import Logout from "./Logout";
 import Login from "./Login";
 

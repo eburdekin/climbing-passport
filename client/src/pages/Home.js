@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "./NavBar";
-import Header from "./Header";
+import NavBar from "../components/NavBar";
+import Header from "../components/Header";
 
 function Home() {
   /* NavBar is on this page */

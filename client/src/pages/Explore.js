@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import Mountain from "./Mountain";
+import NavBar from "../components/NavBar";
+import Header from "../components/Header";
+import Mountain from "../components/Mountain";
 
 function Explore() {
   const [mountains, setMountains] = useState([]);

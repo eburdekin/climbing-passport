@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import NavBar from "./NavBar";
-import Header from "./Header";
+import NavBar from "../components/NavBar";
+import Header from "../components/Header";
 
 function ClimbingPassport() {
   return (
