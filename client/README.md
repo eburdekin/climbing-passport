@@ -37,6 +37,23 @@ Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain
 
 <h1>Using this Program</h1>
 
+To begin this program, you'll use the following commands:
+
+pipenv install && pipenv shell
+flask db init
+npm install --prefix client
+cd server
+flask db init
+flask db migrate -m "implement relationships"
+flask db upgrade head
+python seed.py
+python app.py
+
+Open up an additional terminal and use the following command:
+
+cd client
+npm start
+
 <h3>Home</h1>
 <p>Prompts a user to log into an existing account or create a new one. The user is unable to navigate to the various tabs unless logged in. Once logged in, the home page will welcome the user and they can navigate to the various tabs as needed.</p>
 
