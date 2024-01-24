@@ -57,9 +57,8 @@ const Map = ({ mountains, onMarkerClick }) => {
       // layerControl.addBaseLayer(openTopoMap, "OpenTopoMap");
       // layerControl.addOverlay(parks, "Parks");
 
-      marker._icon.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent default behavior
-        onMarkerClick(mountain);
+      marker.on("click", function (e) {
+        map.setView(e.latlng);
       });
     });
 

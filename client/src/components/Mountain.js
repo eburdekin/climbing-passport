@@ -129,6 +129,7 @@ export default function Mountain({ mountain, selectedMountain }) {
       </span>
       {selectedMountain && selectedMountain.id === mountain.id && (
         <div>
+          I have been selected!!!!!!
           {/* Display detailed information about the selected mountain */}
           {/* You can use selectedMountain information here */}
         </div>
