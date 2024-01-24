@@ -20,23 +20,41 @@ function NavBar() {
     margin: "5px",
   };
 
+  const logoStyle = { position: "relative" };
+
+  const overlayStyle = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+  };
+
   return (
-    <Container maxWidth="md" style={navStyle}>
-      <NavLink to="/" style={linkStyle}>
-        Send It!
-      </NavLink>
-      <NavLink to="/about" style={linkStyle}>
-        About
-      </NavLink>
-      <NavLink to="/explore" style={linkStyle}>
-        Explore
-      </NavLink>
-      <NavLink to="/badges" style={linkStyle}>
-        My Climbing Passport
-      </NavLink>
-      <img src="https://i.ibb.co/HtKpR0D/hero.jpg" alt="hero"></img>
-      <img src="/logo.png" alt="logo"></img>
-    </Container>
+    <>
+      <Container maxWidth="md" style={navStyle}>
+        <NavLink to="/" style={linkStyle}>
+          Send It!
+        </NavLink>
+        <NavLink to="/about" style={linkStyle}>
+          About
+        </NavLink>
+        <NavLink to="/explore" style={linkStyle}>
+          Explore
+        </NavLink>
+        <NavLink to="/badges" style={linkStyle}>
+          My Climbing Passport
+        </NavLink>
+      </Container>
+      <Container style={logoStyle}>
+        <img
+          src="/background.jpeg"
+          alt="hero"
+          border="1px solid black"
+          width="100%"
+        ></img>
+        <img src="/logo.png" alt="logo" style={overlayStyle}></img>
+      </Container>
+    </>
   );
 }
 
