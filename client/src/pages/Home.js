@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 
@@ -10,6 +10,20 @@ import Login from "../components/Login";
 import Container from "@mui/material/Container";
 
 function Home() {
+  // Slow fade in
+  useEffect(() => {
+    // Add the 'loaded' class when the component mounts
+    document.body.classList.add("loaded");
+
+    // Clean up by removing the 'loaded' class after a short delay (adjust duration as needed)
+    const timeoutId = setTimeout(() => {
+      // document.body.classList.remove("loaded");
+    }, 1000); // 1 second delay, adjust as needed
+
+    // Clean up the timeout to avoid memory leaks
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   const [existingUser, setExistingUser] = useState({
     email: "",
     password: "",
@@ -53,7 +67,7 @@ function Home() {
       </Container>
 
       <div className="forms-container">
-        <div className="form-section">
+        <div className="form-section existing-user">
           <h3>Existing users:</h3>
           <br />
           <form onSubmit={handleExistingUserSubmit}>
@@ -78,7 +92,7 @@ function Home() {
             <button type="submit">Submit</button>
           </form>
         </div>
-        <div className="form-section">
+        <div className="form-section new-user">
           <h3>New users:</h3>
           <br />
           <form onSubmit={handleNewUserSubmit}>

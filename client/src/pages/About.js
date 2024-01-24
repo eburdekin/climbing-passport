@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { Switch, Route } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Header from "../components/Header";
@@ -7,7 +7,6 @@ import Header from "../components/Header";
 import Container from "@mui/material/Container";
 
 function About() {
-  /* NavBar is on this page */
   return (
     <>
       <Header />

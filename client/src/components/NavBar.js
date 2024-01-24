@@ -45,6 +45,9 @@ function NavBar() {
         <NavLink to="/badges" style={linkStyle}>
           My Climbing Passport
         </NavLink>
+        <NavLink to="/" style={linkStyle}>
+          Logout
+        </NavLink>
       </Container>
       <Container style={logoStyle}>
         <img

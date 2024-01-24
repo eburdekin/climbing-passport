@@ -13,6 +13,12 @@
 
 body {
   background-color: #f7efe6;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 .home-container {
@@ -21,22 +27,23 @@ body {
 
 .forms-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: center; /* Center the form sections horizontally */
+  gap: 160px; /* Adjust the space between form sections */
+  margin-top: 20px; /* Adjust top margin to center vertically */
 }
 
 .form-section {
   text-align: center;
   background-color: #dcbd9c;
-  margin: 20px auto; /* Add margin to separate each form section */
-  padding: 20px; /* Add padding for better visual appearance */
-  border: 1px solid #ccc; /* Add a border for a visual separation */
-  border-radius: 8px; /* Add border-radius for rounded corners */
-  width: 300px; /* Adjust width as needed */
-  margin-bottom: 20px; /* Add margin at the bottom for more spacing */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
 }
 
 .form-section h3 {
-  margin-bottom: 10px; /* Add margin below the form section header */
+  margin-bottom: 20px; /* Add margin below the form section header */
 }
 
 .form-section label {

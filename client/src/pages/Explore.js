@@ -11,6 +11,20 @@ function Explore() {
   const [mountains, setMountains] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Slow fade in
+  useEffect(() => {
+    // Add the 'loaded' class when the component mounts
+    document.body.classList.add("loaded");
+
+    // Clean up by removing the 'loaded' class after a short delay (adjust duration as needed)
+    const timeoutId = setTimeout(() => {
+      // document.body.classList.remove("loaded"); // Remove this line to keep the 'loaded' class
+    }, 1000); // 1 second delay, adjust as needed
+
+    // Clean up the timeout to avoid memory leaks
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   useEffect(() => {
     fetch("/mountains")
       .then((r) => r.json())
