@@ -9,7 +9,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import { styled } from "@mui/system";
-import { DatePicker } from "@mui/lab";
+// import { DatePicker } from "@mui/lab";
 
 export default function Mountain({ mountain }) {
   const [open, setOpen] = useState(false);
@@ -92,14 +92,14 @@ export default function Mountain({ mountain }) {
               Add Badge
             </Typography>
             <form style={formStyle}>
-              <DatePicker
+              {/* <DatePicker
                 label="Date"
                 value={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
                 renderInput={(params) => (
                   <TextField {...params} style={{ marginBottom: "10px" }} />
                 )}
-              />
+              /> */}
               <TextField
                 select
                 label="Status"
