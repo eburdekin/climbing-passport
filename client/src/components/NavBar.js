@@ -14,7 +14,6 @@ function NavBar() {
     color: "white",
     backgroundColor: "brown",
     borderRadius: "10px",
-    fontSize: 20,
     padding: "10px",
     textDecoration: "none",
     margin: "5px",
