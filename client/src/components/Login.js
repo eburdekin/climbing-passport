@@ -6,7 +6,7 @@ export default function Login() {
   /* NavBar is on this page */
   return (
     <Box
-      height={20}
+      height={50}
       width={20}
       my={4}
       display="flex"

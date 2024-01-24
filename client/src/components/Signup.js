@@ -35,7 +35,7 @@ export default function Signup() {
 
   return (
     <Box
-      height={20}
+      height={50}
       width={20}
       my={4}
       display="flex"
