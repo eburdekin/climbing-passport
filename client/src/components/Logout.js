@@ -1,6 +1,8 @@
 // import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 
+//Not sure if this page is needed
+
 function Logout() {
   /* NavBar is on this page */
   return (

@@ -56,6 +56,8 @@ class Mountain(db.Model, SerializerMixin):
     location = db.Column(db.String, nullable=False)
     type = db.Column(db.String, nullable=False)
     grade = db.Column(db.String, nullable=False)
+    latitude = db.Column(db.Integer, nullable=False)
+    longitude = db.Column(db.Integer, nullable=False)
 
     # Relationships
 

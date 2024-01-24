@@ -1,8 +1,8 @@
-"""update Climber model
+"""initial database
 
-Revision ID: 1cfc09409468
+Revision ID: 8a2631251a96
 Revises: 
-Create Date: 2024-01-23 19:02:22.272569
+Create Date: 2024-01-24 11:11:41.364807
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1cfc09409468'
+revision = '8a2631251a96'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -31,6 +31,8 @@ def upgrade():
     sa.Column('location', sa.String(), nullable=False),
     sa.Column('type', sa.String(), nullable=False),
     sa.Column('grade', sa.String(), nullable=False),
+    sa.Column('latitude', sa.Integer(), nullable=False),
+    sa.Column('longitude', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('badges',

@@ -30,118 +30,244 @@ if __name__ == "__main__":
 
         print("Creating mountains...")
         mountain1 = Mountain(
-            name="Hobbit Book", location="Yosemite", type="Trad", grade="5.7"
+            name="Hobbit Book",
+            location="Yosemite",
+            type="Trad",
+            grade="5.7",
+            latitude=37.8623,
+            longitude=-119.42265,
         )
         mountain2 = Mountain(
-            name="Zorro", location="Yosemite", type="Bouldering", grade="V4"
+            name="Zorro",
+            location="Yosemite",
+            type="Bouldering",
+            grade="V4",
+            latitude=37.73744,
+            longitude=-119.57605,
         )
         mountain3 = Mountain(
-            name="The Nutcracker Suite", location="Yosemite", type="Trad", grade="5.8"
+            name="The Nutcracker Suite",
+            location="Yosemite",
+            type="Trad",
+            grade="5.8",
+            latitude=37.73059,
+            longitude=-119.619,
         )
         mountain4 = Mountain(
-            name="The Nutcracker Suite", location="Yosemite", type="Trad", grade="5.9"
+            name="The Nose",
+            location="Yosemite",
+            type="Trad",
+            grade="5.9",
+            latitude=37.73051,
+            longitude=-119.63828,
         )
         mountain5 = Mountain(
-            name="Baby Back Ribs", location="Red River Gorge", type="Sport", grade="5.8"
+            name="Baby Back Ribs",
+            location="Red River Gorge",
+            type="Sport",
+            grade="5.8",
+            latitude=37.64271,
+            longitude=-83.71462,
         )
         mountain6 = Mountain(
             name="Bring Out Your Dead",
             location="Red River Gorge",
             type="Trad",
             grade="5.9",
+            latitude=37.64911,
+            longitude=-83.67518,
         )
         mountain7 = Mountain(
             name="When Doves Cry",
             location="Red River Gorge",
             type="Bouldering",
             grade="V5",
+            latitude=37.67744,
+            longitude=-83.68217,
         )
         mountain8 = Mountain(
-            name="Banshee", location="Red River Gorge", type="Sport", grade="5.11c"
+            name="Banshee",
+            location="Red River Gorge",
+            type="Sport",
+            grade="5.11c",
+            latitude=37.73372,
+            longitude=-83.63884,
         )
         mountain9 = Mountain(
             name="Breakfast Burrito",
             location="Red River Gorge",
             type="Sport",
             grade="5.10c",
+            latitude=37.65292,
+            longitude=-83.72495,
         )
         mountain10 = Mountain(
-            name="The UFO", location="Red River Gorge", type="Bouldering", grade="V6"
+            name="The UFO",
+            location="Red River Gorge",
+            type="Bouldering",
+            grade="V6",
+            latitude=37.81801,
+            longitude=-83.67414,
         )
         mountain11 = Mountain(
-            name="Autobot", location="Alpine Rock", type="Bouldering", grade="V5"
+            name="Autobot",
+            location="Alpine Rock",
+            type="Bouldering",
+            grade="V5",
+            latitude=40.30492,
+            longitude=-105.66025,
         )
         mountain12 = Mountain(
-            name="Celestial Gate", location="Alpine Rock", type="Trad", grade="5.12a"
+            name="Celestial Gate",
+            location="Alpine Rock",
+            type="Trad",
+            grade="5.12a",
+            latitude=40.35209,
+            longitude=-105.65432,
         )
         mountain13 = Mountain(
-            name="The Barb", location="Alpine Rock", type="Trad", grade="5.10"
+            name="The Barb",
+            location="Alpine Rock",
+            type="Trad",
+            grade="5.10",
+            latitude=40.2567,
+            longitude=-105.63834,
         )
         mountain14 = Mountain(
-            name="Wham Ridge", location="Alpine Rock", type="Trad", grade="5.4"
+            name="Wham Ridge",
+            location="Alpine Rock",
+            type="Trad",
+            grade="5.4",
+            latitude=37.6894,
+            longitude=-107.602,
         )
         mountain15 = Mountain(
             name="Burning Calves",
             location="New River Gorge",
             type="Trad",
             grade="5.10b",
+            latitude=38.05238,
+            longitude=-81.03324,
         )
         mountain16 = Mountain(
             name="Thunderstruck",
             location="New River Gorge",
             type="Sport",
             grade="5.12b",
+            latitude=38.04953,
+            longitude=-81.07039,
         )
         mountain17 = Mountain(
-            name="Aesthetica", location="New River Gorge", type="Sport", grade="5.11c"
+            name="Aesthetica",
+            location="New River Gorge",
+            type="Sport",
+            grade="5.11c",
+            latitude=38.05596,
+            longitude=-81.05393,
         )
         mountain18 = Mountain(
-            name="Slim Pickins", location="Hueco Tanks", type="Bouldering", grade="V5"
+            name="Slim Pickins",
+            location="Hueco Tanks",
+            type="Bouldering",
+            grade="V5",
+            latitude=31.9108,
+            longitude=-106.0372,
         )
         mountain19 = Mountain(
-            name="See Spot Run", location="Hueco Tanks", type="Bouldering", grade="V6"
+            name="See Spot Run",
+            location="Hueco Tanks",
+            type="Bouldering",
+            grade="V6",
+            latitude=31.9222,
+            longitude=-106.0434,
         )
         mountain20 = Mountain(
-            name="Warm Up Roof", location="Hueco Tanks", type="Bouldering", grade="V4"
+            name="Warm Up Roof",
+            location="Hueco Tanks",
+            type="Bouldering",
+            grade="V4",
+            latitude=31.91964,
+            longitude=-106.03994,
         )
         mountain21 = Mountain(
-            name="Baby Martini", location="Hueco Tanks", type="Bouldering", grade="V6"
+            name="Baby Martini",
+            location="Hueco Tanks",
+            type="Bouldering",
+            grade="V6",
+            latitude=31.92168,
+            longitude=-106.04317,
         )
         mountain22 = Mountain(
             name="Saturday Night Live",
             location="Joshua Tree",
             type="Bouldering",
             grade="V4",
+            latitude=34.01167,
+            longitude=-116.16855,
         )
         mountain23 = Mountain(
-            name="Heart and Sole", location="Joshua Tree", type="Trad", grade="5.10a"
+            name="Heart and Sole",
+            location="Joshua Tree",
+            type="Trad",
+            grade="5.10a",
+            latitude=34.02513,
+            longitude=-116.15617,
         )
         mountain24 = Mountain(
-            name="Big Moe", location="Joshua Tree", type="Trad", grade="5.11a"
+            name="Big Moe",
+            location="Joshua Tree",
+            type="Trad",
+            grade="5.11a",
+            latitude=34.02451,
+            longitude=-116.15802,
         )
         mountain25 = Mountain(
-            name="Pigpen", location="Joshua Tree", type="Bouldering", grade="V4"
+            name="Pigpen",
+            location="Joshua Tree",
+            type="Bouldering",
+            grade="V4",
+            latitude=34.0153,
+            longitude=-116.15811,
         )
         mountain26 = Mountain(
             name="Streetcar Named Desire",
             location="Joshua Tree",
             type="Bouldering",
             grade="V6",
+            latitude=34.02758,
+            longitude=-116.14483,
         )
         mountain27 = Mountain(
-            name="Palm-o-granite", location="Joshua Tree", type="Bouldering", grade="V7"
+            name="Palm-o-granite",
+            location="Joshua Tree",
+            type="Bouldering",
+            grade="V7",
+            latitude=33.98603,
+            longitude=-116.15961,
         )
         mountain28 = Mountain(
-            name="Frogland", location="Red Rocks", type="Trad", grade="5.8"
+            name="Frogland",
+            location="Red Rocks",
+            type="Trad",
+            grade="5.8",
+            latitude=36.03509,
+            longitude=-115.46345,
         )
         mountain29 = Mountain(
             name="Dream of Wild Turkeys",
             location="Red Rocks",
             type="Trad",
             grade="5.10a",
+            latitude=36.03518,
+            longitude=-115.46652,
         )
         mountain30 = Mountain(
-            name="Cloud Tower", location="Red Rocks", type="Trad", grade="5.12a"
+            name="Cloud Tower",
+            location="Red Rocks",
+            type="Trad",
+            grade="5.12a",
+            latitude=36.11237,
+            longitude=-115.48908,
         )
         mountains = [
             mountain1,

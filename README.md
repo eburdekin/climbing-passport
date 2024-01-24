@@ -2,7 +2,7 @@ cd <h1>Send It! - Your Personal Climbing Passport</h1>
 
 </br>
 
-<img src="src/images/Homepage.png" />
+<img src="public/Homepage.png" />
 
 <p>"Send It!" is a project designed for climbers to create and manage their personalized climbing passports. Similar to the functionality of popular platforms like AllTrails and MountainProject, this application empowers users to explore a map, discover climbing areas of interest, and add them to their climbing badge collection. Each badge represents a climb attempted or completed, forming a unique climbing passport for the user.
 <p>
@@ -33,7 +33,7 @@ Contains the following components:
 
 Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain(s) through Badge(s), a Mountain has many Climber(s) through Badge(s), and a Badge belongs to a Climber and belongs to a Mountain. All of a climber's badges are contained on the frontend as a collection in the My Climbing Passport tab.
 
-<img src="src/images/Relationships.png" />
+<img src="public/Relationships.png" />
 
 <h1>Using this Program</h1>
 

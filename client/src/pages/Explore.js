@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 import Mountain from "../components/Mountain";
+import Map from "../components/Map";
 
 // Material-UI components
 import Container from "@mui/material/Container";
@@ -9,6 +10,7 @@ import TextField from "@mui/material/TextField";
 
 function Explore() {
   const [mountains, setMountains] = useState([]);
+  const [selectedMountain, setSelectedMountain] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
   // Slow fade in
@@ -39,6 +41,11 @@ function Explore() {
     mountain.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleMarkerClick = (mountain) => {
+    // Handle marker click logic (e.g., fetch mountain details from backend)
+    setSelectedMountain(mountain);
+  };
+
   return (
     <>
       <Header />
@@ -57,8 +64,17 @@ function Explore() {
             "&:focus": { "& fieldset": { borderColor: "black" } }, // Set the outline color when focused
           }}
         />
+        <Map
+          mountains={filteredMountains}
+          onMarkerClick={handleMarkerClick}
+          selectedMountain={selectedMountain}
+        />
         {filteredMountains.map((mountain) => (
-          <Mountain key={mountain.id} mountain={mountain} />
+          <Mountain
+            key={mountain.id}
+            mountain={mountain}
+            selectedMountain={selectedMountain}
+          />
         ))}
       </Container>
     </>

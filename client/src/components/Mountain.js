@@ -11,7 +11,7 @@ import {
 import { styled } from "@mui/system";
 // import { DatePicker } from "@mui/lab";
 
-export default function Mountain({ mountain }) {
+export default function Mountain({ mountain, selectedMountain }) {
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [status, setStatus] = useState("");
@@ -28,17 +28,15 @@ export default function Mountain({ mountain }) {
   });
 
   const modalStyle = {
+    position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
     bgcolor: "background.paper",
-    border: "2px solid #000000",
+    border: "2px solid #000",
     boxShadow: 24,
-    borderRadius: "5px",
     p: 4,
-    textAlign: "center",
-    transition: "background-color 0.5s ease", // Add this line for the transition effect
   };
 
   const buttonStyle = {
@@ -110,8 +108,9 @@ export default function Mountain({ mountain }) {
                 onChange={(e) => setStatus(e.target.value)}
                 sx={{ mt: 2 }}
               >
-                <MenuItem value="Completed">Completed</MenuItem>
                 <MenuItem value="Attempted">Attempted</MenuItem>
+                <MenuItem value="Completed">Completed</MenuItem>
+                <MenuItem value="SummitPlan">Summit Plan</MenuItem>
               </TextField>
               <Button onClick={handleSubmit} variant="contained" sx={{ mt: 2 }}>
                 Submit
@@ -120,6 +119,13 @@ export default function Mountain({ mountain }) {
           </Box>
         </Modal>
       </span>
+      {selectedMountain && selectedMountain.id === mountain.id && (
+        <div>
+          <p>I was clicked</p>
+          {/* Display detailed information about the selected mountain */}
+          {/* You can use selectedMountain information here */}
+        </div>
+      )}
     </MountainListItem>
   );
 }
