@@ -8,6 +8,7 @@ function NavBar() {
     padding: "10px",
     width: "100%",
     textAlign: "center",
+    marginBottom: "20px",
   };
 
   const linkStyle = {
