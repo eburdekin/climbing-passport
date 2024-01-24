@@ -3,7 +3,6 @@
 import Box from "@mui/material/Box";
 
 export default function Login() {
-  /* NavBar is on this page */
   return (
     <Box
       height={50}
