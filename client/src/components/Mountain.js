@@ -27,14 +27,17 @@ export default function Mountain({ mountain }) {
     alignItems: "flex-start",
   });
 
-  const style = {
+  const modalStyle = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: "#F4EDCC",
-    border: "2px solid #000",
+    bgcolor: "background.paper",
+    border: "2px solid #000000",
+    boxShadow: 24,
+    borderRadius: "5px",
     p: 4,
+    textAlign: "center",
     transition: "background-color 0.5s ease", // Add this line for the transition effect
   };
 
@@ -77,12 +80,12 @@ export default function Mountain({ mountain }) {
         </Button>
         <Modal
           open={open}
-          sx={style}
+          sx={modalStyle}
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
-          TransitionComponent={Slide}
-          transitionDuration={1000}
+          transitioncomponent={Slide}
+          transitionduration={1000}
         >
           <Box>
             <Button onClick={handleClose} style={buttonStyle}>

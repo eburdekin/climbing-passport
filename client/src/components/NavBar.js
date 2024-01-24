@@ -1,26 +1,38 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
+// material ui components
+import Container from "@mui/material/Container";
 
 function NavBar() {
   const navStyle = {
     padding: "10px",
     width: "100%",
     textAlign: "center",
+    marginBottom: "20px",
   };
 
   const linkStyle = {
     color: "white",
     backgroundColor: "brown",
     borderRadius: "10px",
-    fontSize: 20,
     padding: "10px",
     textDecoration: "none",
     margin: "5px",
   };
 
+  const logoStyle = { position: "relative" };
+
+  const overlayStyle = {
+    height: "250px",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+  };
+
   return (
     <>
-      <div style={navStyle}>
+      <Container maxWidth="md" style={navStyle}>
         <NavLink to="/" style={linkStyle}>
           Send It!
         </NavLink>
@@ -33,9 +45,16 @@ function NavBar() {
         <NavLink to="/badges" style={linkStyle}>
           My Climbing Passport
         </NavLink>
-      </div>
-      <img src="https://i.ibb.co/HtKpR0D/hero.jpg" alt="hero"></img>
-      <img src="/logo.png" alt="logo"></img>
+      </Container>
+      <Container style={logoStyle}>
+        <img
+          src="/background.jpeg"
+          alt="hero"
+          border="1px solid black"
+          width="100%"
+        ></img>
+        <img src="/logo.png" alt="logo" style={overlayStyle}></img>
+      </Container>
     </>
   );
 }
