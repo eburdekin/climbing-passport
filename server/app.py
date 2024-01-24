@@ -174,6 +174,7 @@ class Mountains(Resource):
             new_mountain.grade = data.get("grade")
             new_mountain.latitude = data.get("latitude")
             new_mountain.longitude = data.get("longitude")
+            new_mountain.image = data.get("image")
             db.session.add(new_mountain)
             db.session.commit()
             return make_response(new_mountain.to_dict(), 201)
@@ -211,6 +212,7 @@ class MountainsById(Resource):
             setattr(mountain, "grade", data["grade"])
             setattr(mountain, "latitude", data["latitude"])
             setattr(mountain, "latitude", data["latitude"])
+            setattr(mountain, "image", data["image"])
             db.session.add(mountain)
             db.session.commit()
             return (

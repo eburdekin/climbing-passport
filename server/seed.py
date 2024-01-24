@@ -36,6 +36,7 @@ if __name__ == "__main__":
             grade="5.7",
             latitude=37.8623,
             longitude=-119.42265,
+            image="https://mountainproject.com/assets/photos/climb/107620452_smallMed_1494200704.jpg?cache=1701317479",
         )
         mountain2 = Mountain(
             name="Zorro",
