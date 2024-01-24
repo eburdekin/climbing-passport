@@ -12,7 +12,7 @@ function ClimbingPassport() {
       <Header />
       <NavBar />
       <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
-        <h1>Climbing Passport</h1>
+        <h1>My Climbing Passport</h1>
         {/* Can delete or update a badge on this page. A modal pops up to edit the badge or deleting it removes the badge. When either action is taken, an alert pops up informing the user the badge has been edited or deleted */}
       </Container>
     </>

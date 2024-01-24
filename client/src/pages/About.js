@@ -14,13 +14,14 @@ function About() {
       <NavBar />
 
       <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
-        <h2>Welcome to 'Send It!'- Your Personal Climbing Passport.</h2>
+        <br />
+        <h1>Welcome to 'Send It!'- Your Personal Climbing Passport</h1>
+        <br />
         <p>
           Whether bouldering, sport climbing, or trad climbing, 'Send It!' is
           your go-to companion for tracking, sharing and celebrating your
           climbing adventures.
         </p>
-        <br />
         <p>
           Explore crags and add them to your badge collection to create a unique
           climbing passport to showcase your achievements. If a badge needs to

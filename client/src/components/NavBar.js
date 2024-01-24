@@ -13,7 +13,7 @@ function NavBar() {
 
   const linkStyle = {
     color: "white",
-    backgroundColor: "brown",
+    backgroundColor: "#A8672A",
     borderRadius: "10px",
     padding: "10px",
     textDecoration: "none",
