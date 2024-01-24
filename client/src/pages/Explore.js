@@ -3,6 +3,9 @@ import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 import Mountain from "../components/Mountain";
 
+// material ui components
+import Container from "@mui/material/Container";
+
 function Explore() {
   const [mountains, setMountains] = useState([]);
 
@@ -16,12 +19,12 @@ function Explore() {
     <>
       <Header />
       <NavBar />
-      <div>
+      <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
         <h1>Search</h1>
         {mountains.map((mountain) => (
           <Mountain key={mountain.id} mountain={mountain} />
         ))}
-      </div>
+      </Container>
     </>
   );
 }

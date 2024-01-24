@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
+// material ui components
+import Container from "@mui/material/Container";
 
 function NavBar() {
   const navStyle = {
@@ -19,24 +21,22 @@ function NavBar() {
   };
 
   return (
-    <>
-      <div style={navStyle}>
-        <NavLink to="/" style={linkStyle}>
-          Send It!
-        </NavLink>
-        <NavLink to="/about" style={linkStyle}>
-          About
-        </NavLink>
-        <NavLink to="/explore" style={linkStyle}>
-          Explore
-        </NavLink>
-        <NavLink to="/badges" style={linkStyle}>
-          My Climbing Passport
-        </NavLink>
-      </div>
+    <Container maxWidth="md" style={navStyle}>
+      <NavLink to="/" style={linkStyle}>
+        Send It!
+      </NavLink>
+      <NavLink to="/about" style={linkStyle}>
+        About
+      </NavLink>
+      <NavLink to="/explore" style={linkStyle}>
+        Explore
+      </NavLink>
+      <NavLink to="/badges" style={linkStyle}>
+        My Climbing Passport
+      </NavLink>
       <img src="https://i.ibb.co/HtKpR0D/hero.jpg" alt="hero"></img>
       <img src="/logo.png" alt="logo"></img>
-    </>
+    </Container>
   );
 }
 

@@ -3,6 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 
+// material ui components
+import Container from "@mui/material/Container";
+
 function About() {
   /* NavBar is on this page */
   return (
@@ -10,7 +13,7 @@ function About() {
       <Header />
       <NavBar />
 
-      <div>
+      <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
         <h2>Welcome to 'Send It!'- Your Personal Climbing Passport.</h2>
         <p>
           Whether bouldering, sport climbing, or trad climbing, 'Send It!' is
@@ -25,7 +28,7 @@ function About() {
         </p>
         <br />
         <h3>Let the ascent begin, and climb on.</h3>
-      </div>
+      </Container>
     </>
   );
 }

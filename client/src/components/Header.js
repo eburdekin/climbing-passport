@@ -1,26 +1,14 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// material ui components
+import Container from "@mui/material/Container";
 
-function Header() {
-  return (
-    <div>
-      <img
-        src="https://i.ibb.co/9b6m5Mt/Mountain-range.png"
-        alt="freehand mountains"
-        width="auto"
-      />
-      <img
-        src="https://i.ibb.co/9b6m5Mt/Mountain-range.png"
-        alt="freehand mountains"
-        width="auto"
-      />
-      <img
-        src="https://i.ibb.co/9b6m5Mt/Mountain-range.png"
-        alt="freehand mountains"
-        width="auto"
-      />
-    </div>
-  );
+export default function Header() {
+  const mountainStyle = {
+    backgroundImage: "url(https://i.ibb.co/9b6m5Mt/Mountain-range.png)",
+    backgroundRepeat: "repeat-x",
+    backgroundSize: "contain",
+    height: "300px",
+    marginBottom: "0",
+  };
+
+  return <Container maxWidth="md" style={mountainStyle}></Container>;
 }
-
-export default Header;
