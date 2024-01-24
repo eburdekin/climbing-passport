@@ -47,7 +47,12 @@ class Signup(Resource):
             db.session.add(climber)
             db.session.commit()
 
-            session["user_id"] = climber.id
+            climber_id = climber.id
+
+            # successfully adds climber to Climbers db
+            # user_id isn't added to Cookies - need to troubleshoot
+
+            session["user_id"] = climber_id
 
             return climber.to_dict(), 201
 
