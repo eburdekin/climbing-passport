@@ -115,16 +115,16 @@ class Badge(db.Model, SerializerMixin):
     def validate_date(self, key, value):
         try:
             # Attempt to parse the value as a valid date
-            date_obj = datetime.strptime(str(value), "%Y-%m-%d")
+            date_obj = datetime.strptime(str(value), "%m/%d/%Y")
 
-            # Check if the parsed date is within the desired range (1 to 30)
+            # Check if the parsed date is within the desired range (1 to 31)
             if not (1 <= date_obj.day <= 31):
                 raise ValueError("Day must be between 1 and 31")
 
             return date_obj.date()
         except ValueError:
             raise ValueError(
-                "Invalid date format. Please provide a valid date in the format YYYY-MM-DD"
+                "Invalid date format. Please provide a valid date in the format MM/DD/YYYY"
             )
 
     @validates("climber_id")

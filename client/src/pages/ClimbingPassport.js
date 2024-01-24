@@ -12,6 +12,8 @@ import {
   MenuItem,
 } from "@mui/material";
 import { styled } from "@mui/system";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 // material ui components
 import Container from "@mui/material/Container";
@@ -21,7 +23,7 @@ function ClimbingPassport() {
     /*Modal stuff:*/
   }
   const [open, setOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [date, setDate] = useState(null);
   const [status, setStatus] = useState("");
 
   const BadgeListItem = styled("li")({
@@ -65,7 +67,7 @@ function ClimbingPassport() {
   const handleClick = () => {
     setOpen(!open);
     // Reset input values when modal is opened
-    setSelectedDate(null);
+    setDate(null);
     setStatus("");
   };
 
@@ -110,15 +112,20 @@ function ClimbingPassport() {
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 Add Badge
               </Typography>
+              <br />
               <form style={formStyle}>
-                {/* <DatePicker
-                label="Date"
-                value={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                renderInput={(params) => (
-                  <TextField {...params} style={{ marginBottom: "10px" }} />
-                )}
-              /> */}
+                <Typography id="datepicker-title" component="h3">
+                  Select a date
+                </Typography>
+                <DatePicker
+                  label="Date"
+                  selected={date}
+                  onChange={(date) => setDate(date)}
+                  renderInput={(params) => (
+                    <TextField {...params} style={{ marginBottom: "10px" }} />
+                  )}
+                />
+                <br />
                 <TextField
                   select
                   label="Status"
@@ -126,9 +133,11 @@ function ClimbingPassport() {
                   onChange={(e) => setStatus(e.target.value)}
                   sx={{ mt: 2 }}
                 >
-                  <MenuItem value="Completed">Completed</MenuItem>
                   <MenuItem value="Attempted">Attempted</MenuItem>
+                  <MenuItem value="Completed">Completed</MenuItem>
+                  <MenuItem value="SummitPlan">Summit Plan</MenuItem>
                 </TextField>
+                <br />
                 <Button
                   onClick={handleSubmit}
                   variant="contained"

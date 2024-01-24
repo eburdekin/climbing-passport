@@ -51,7 +51,6 @@ function Explore() {
       <Header />
       <NavBar />
       <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
-        {/* <h1>Explore</h1> */}
         <br />
         <TextField
           label="Search Mountains"
@@ -59,7 +58,7 @@ function Explore() {
           value={searchTerm}
           onChange={handleSearchChange}
           sx={{
-            marginBottom: 16,
+            marginBottom: 5,
             "& fieldset": { borderColor: "gray" }, // Set the initial outline color
             "&:focus": { "& fieldset": { borderColor: "black" } }, // Set the outline color when focused
           }}
@@ -69,6 +68,7 @@ function Explore() {
           onMarkerClick={handleMarkerClick}
           selectedMountain={selectedMountain}
         />
+        <br />
         {filteredMountains.map((mountain) => (
           <Mountain
             key={mountain.id}

@@ -304,46 +304,46 @@ if __name__ == "__main__":
 
         # print("Creating badges...")
         # b1 = Badge(
-        #     climber=climber1, mountain=mountain2, date="2023-10-31", completed="Yes"
+        #     climber=climber1, mountain=mountain2, date="10/31/2023", completed="Yes"
         # )
         # b2 = Badge(
         #     climber=climber1,
         #     mountain=mountain5,
-        #     date="2023-05-27",
+        #     date="05/27/2023",
         #     completed="Attempted",
         # )
         # b3 = Badge(
-        #     climber=climber1, mountain=mountain6, date="2022-09-15", completed="No"
+        #     climber=climber1, mountain=mountain6, date="09/15/2022", completed="No"
         # )
         # b4 = Badge(
-        #     climber=climber1, mountain=mountain1, date="2024-01-10", completed="Yes"
+        #     climber=climber1, mountain=mountain1, date="01/10/2024", completed="Yes"
         # )
         # b5 = Badge(
-        #     climber=climber1, mountain=mountain8, date="2023-07-31", completed="No"
+        #     climber=climber1, mountain=mountain8, date="07/31/2023", completed="No"
         # )
         # b6 = Badge(
         #     climber=climber1,
         #     mountain=mountain12,
-        #     date="2022-09-15",
+        #     date="09/15/2022",
         #     completed="Attempted",
         # )
         # b7 = Badge(
-        #     climber=climber2, mountain=mountain14, date="2023-10-31", completed="Yes"
+        #     climber=climber2, mountain=mountain14, date="10/31/2023", completed="Yes"
         # )
         # b8 = Badge(
         #     climber=climber2,
         #     mountain=mountain17,
-        #     date="2023-05-27",
+        #     date="05/27/2023",
         #     completed="Attempted",
         # )
         # b9 = Badge(
-        #     climber=climber2, mountain=mountain18, date="2022-09-15", completed="No"
+        #     climber=climber2, mountain=mountain18, date="09/15/2022", completed="No"
         # )
         # b10 = Badge(
-        #     climber=climber2, mountain=mountain19, date="2024-01-10", completed="Yes"
+        #     climber=climber2, mountain=mountain19, date="01/10/2024", completed="Yes"
         # )
         # b11 = Badge(
-        #     climber=climber2, mountain=mountain23, date="2023-07-31", completed="No"
+        #     climber=climber2, mountain=mountain23, date="07/31/2023", completed="No"
         # )
         # badges = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]
         # db.session.add_all(climbers)
