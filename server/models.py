@@ -4,7 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 from sqlalchemy.orm import validates
 from datetime import datetime
-from config import db
+from config import db, bcrypt
+from sqlalchemy.ext.hybrid import hybrid_property
 
 
 class Climber(db.Model, SerializerMixin):
@@ -13,7 +14,21 @@ class Climber(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)
-    password = db.Column(db.String, nullable=False)
+    _password_hash = db.Column(db.String)
+
+    # Authentication
+
+    @hybrid_property
+    def password_hash(self):
+        raise AttributeError("Password hashes may not be viewed.")
+
+    @password_hash.setter
+    def password_hash(self, password):
+        password_hash = bcrypt.generate_password_hash(password.encode("utf-8"))
+        self._password_hash = password_hash.decode("utf-8")
+
+    def authenticate(self, password):
+        return bcrypt.check_password_hash(self._password_hash, password.encode("utf-8"))
 
     # Relationships
 
@@ -24,7 +39,10 @@ class Climber(db.Model, SerializerMixin):
 
     # Serialization rules
 
-    serialize_rules = ("-badges.climber",)
+    serialize_rules = (
+        "-badges.climber",
+        "-_password_hash",
+    )
 
     def __repr__(self):
         return f"<Climber {self.name}>"
