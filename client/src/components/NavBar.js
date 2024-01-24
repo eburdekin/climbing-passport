@@ -23,6 +23,7 @@ function NavBar() {
   const logoStyle = { position: "relative" };
 
   const overlayStyle = {
+    height: "250px",
     position: "absolute",
     top: "50%",
     left: "50%",
