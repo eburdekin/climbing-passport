@@ -2,7 +2,7 @@
 
 </br>
 
-<img src="public/Homepage.png" />
+<img src="https://i.ibb.co/SRRwVRJ/Homepage.png" />
 
 <p>"Send It!" is a project designed for climbers to create and manage their personalized climbing passports. Similar to the functionality of popular platforms like AllTrails and MountainProject, this application empowers users to explore a map, discover climbing areas of interest, and add them to their climbing badge collection. Each badge represents a climb attempted or completed, forming a unique climbing passport for the user.
 <p>
@@ -33,7 +33,7 @@ Contains the following components:
 
 Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain(s) through Badge(s), a Mountain has many Climber(s) through Badge(s), and a Badge belongs to a Climber and belongs to a Mountain. All of a climber's badges are contained on the frontend as a collection in the My Climbing Passport tab.
 
-<img src="public/Relationships.png" />
+<img src="https://i.ibb.co/2W32fpK/Relationships.png" />
 
 <h1>Using this Program</h1>
 
@@ -51,7 +51,7 @@ To begin this program, you'll use the following commands:
   <li>python app.py</li>
 </ul>
 
-Open up an additional terminal and use the following command:
+Open up an additional terminal and use the following commands:
 
 <ul>
   <li>cd client</li>
