@@ -9,11 +9,12 @@ import {
   MenuItem,
 } from "@mui/material";
 import { styled } from "@mui/system";
-// import { DatePicker } from "@mui/lab";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Mountain({ mountain, selectedMountain }) {
   const [open, setOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [date, setDate] = useState(null);
   const [status, setStatus] = useState("");
 
   const MountainListItem = styled("li")({
@@ -28,7 +29,7 @@ export default function Mountain({ mountain, selectedMountain }) {
   });
 
   const modalStyle = {
-    position: "absolute",
+    // position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
@@ -37,6 +38,7 @@ export default function Mountain({ mountain, selectedMountain }) {
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
+    textAlign: "center",
   };
 
   const buttonStyle = {
@@ -55,7 +57,7 @@ export default function Mountain({ mountain, selectedMountain }) {
   const handleClick = () => {
     setOpen(!open);
     // Reset input values when modal is opened
-    setSelectedDate(null);
+    setDate(null);
     setStatus("");
   };
 
@@ -92,15 +94,20 @@ export default function Mountain({ mountain, selectedMountain }) {
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Add Badge
             </Typography>
+            <br />
             <form style={formStyle}>
-              {/* <DatePicker
+              <Typography id="datepicker-title" component="h3">
+                Select a date
+              </Typography>
+              <DatePicker
                 label="Date"
-                value={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
+                selected={date}
+                onChange={(date) => setDate(date)}
                 renderInput={(params) => (
                   <TextField {...params} style={{ marginBottom: "10px" }} />
                 )}
-              /> */}
+              />
+              <br />
               <TextField
                 select
                 label="Status"
@@ -112,6 +119,7 @@ export default function Mountain({ mountain, selectedMountain }) {
                 <MenuItem value="Completed">Completed</MenuItem>
                 <MenuItem value="SummitPlan">Summit Plan</MenuItem>
               </TextField>
+              <br />
               <Button onClick={handleSubmit} variant="contained" sx={{ mt: 2 }}>
                 Submit
               </Button>
@@ -121,7 +129,6 @@ export default function Mountain({ mountain, selectedMountain }) {
       </span>
       {selectedMountain && selectedMountain.id === mountain.id && (
         <div>
-          <p>I was clicked</p>
           {/* Display detailed information about the selected mountain */}
           {/* You can use selectedMountain information here */}
         </div>
