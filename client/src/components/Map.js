@@ -37,7 +37,7 @@ const Map = ({ mountains, onMarkerClick }) => {
     mountains.forEach((mountain) => {
       const marker = L.marker([mountain.latitude, mountain.longitude], {
         icon: mountainIcon,
-      });
+      }).bindPopup(mountain.name);
 
       switch (mountain.type.toLowerCase()) {
         case "trad":
