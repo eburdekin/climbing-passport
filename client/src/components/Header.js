@@ -3,10 +3,10 @@ import Container from "@mui/material/Container";
 
 export default function Header() {
   const mountainStyle = {
-    backgroundImage: "url(https://i.ibb.co/9b6m5Mt/Mountain-range.png)",
+    backgroundImage: "url(https://i.ibb.co/DGsNdR9/Untitled-design-1-2.png)",
     backgroundRepeat: "repeat-x",
     backgroundSize: "contain",
-    height: "300px",
+    height: "150px",
     marginBottom: "0",
   };
 
