@@ -8,6 +8,7 @@ from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 import os
+from flask_bcrypt import Bcrypt
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASE = os.environ.get("DB_URI", f"sqlite:///{os.path.join(BASE_DIR, 'app.db')}")
@@ -29,8 +30,12 @@ db = SQLAlchemy(metadata=metadata)
 migrate = Migrate(app, db)
 db.init_app(app)
 
+
+bcrypt = Bcrypt(app)
+
 # Instantiate REST API
 api = Api(app)
+
 
 # Instantiate CORS
 CORS(app)
