@@ -140,7 +140,7 @@ api.add_resource(MountainsById, "/mountains/<int:id>")
 
 class Badges(Resource):
     def get(self):
-        badges = [badges.to_dict() for badge in Badge.query.all()]
+        badges = [badge.to_dict() for badge in Badge.query.all()]
         return make_response(badges, 200)
 
     def post(self):
