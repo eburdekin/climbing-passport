@@ -4,7 +4,8 @@ import "leaflet/dist/leaflet.css";
 
 const Map = ({ mountains, onMarkerClick }) => {
   // Create a custom mountain icon
-  const mountainIcon = L.icon({
+
+  const defaultIcon = L.icon({
     iconUrl: "mountainlogo.png",
     iconSize: [50, 50],
     iconAnchor: [22, 94],
@@ -12,6 +13,37 @@ const Map = ({ mountains, onMarkerClick }) => {
     shadowSize: [68, 95],
     shadowAnchor: [22, 94],
   });
+
+  const tradIcon = L.icon({
+    iconUrl: "1.png",
+    iconSize: [50, 50],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94],
+  });
+
+  const sportIcon = L.icon({
+    iconUrl: "2.png",
+    iconSize: [50, 50],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94],
+  });
+
+  const boulderingIcon = L.icon({
+    iconUrl: "3.png",
+    iconSize: [50, 50],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94],
+  });
+
+  const popupStyle = {
+    width: "100px",
+  };
 
   useEffect(() => {
     // Initialize map only once when the component mounts
@@ -22,22 +54,35 @@ const Map = ({ mountains, onMarkerClick }) => {
       "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     ).addTo(map);
 
-    // Add markers for each mountain
-    // mountains.forEach((mountain) => {
-    //   const marker = L.marker([mountain.latitude, mountain.longitude], {
-    //     icon: mountainIcon,
-    //   })
-    //     .addTo(map)
-    //     .bindPopup(mountain.name);
-
     const trad = L.layerGroup([]).addTo(map);
     const sport = L.layerGroup([]).addTo(map);
     const bouldering = L.layerGroup([]).addTo(map);
 
+    function getIconByType(type) {
+      switch (type.toLowerCase()) {
+        case "trad":
+          return tradIcon;
+        case "sport":
+          return sportIcon;
+        case "bouldering":
+          return boulderingIcon;
+        default:
+          console.warn(`Unknown mountain type: ${type}`);
+          return defaultIcon; // Use a default icon for unknown types
+      }
+    }
+
     mountains.forEach((mountain) => {
+      const popupContent = `<div style=${popupStyle}>
+        <h2>${mountain.name}</h2>
+        <img src="https://yogatoendaddiction.files.wordpress.com/2014/04/mountain.jpg" width="50px"></img>
+        <p>Location: ${mountain.location}</p>
+        <p>Type: ${mountain.type}</p>
+        <p>Grade: ${mountain.grade}</p></div>`;
+
       const marker = L.marker([mountain.latitude, mountain.longitude], {
-        icon: mountainIcon,
-      }).bindPopup(mountain.name);
+        icon: getIconByType(mountain.type),
+      }).bindPopup(popupContent);
 
       switch (mountain.type.toLowerCase()) {
         case "trad":
@@ -78,7 +123,7 @@ const Map = ({ mountains, onMarkerClick }) => {
     return () => {
       map.remove();
     };
-  }, [mountains, onMarkerClick, mountainIcon]);
+  }, [mountains, onMarkerClick, defaultIcon]);
 
   return <div id="map" style={{ height: "400px" }} />;
 };

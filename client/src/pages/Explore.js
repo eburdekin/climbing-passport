@@ -55,6 +55,7 @@ function Explore() {
         <TextField
           label="Search Mountains"
           variant="outlined"
+          color="success"
           value={searchTerm}
           onChange={handleSearchChange}
           sx={{
