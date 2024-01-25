@@ -24,10 +24,28 @@ export default function Signup() {
 
       if (response.ok) {
         const user = await response.json();
-        // Handle successful signup (e.g., store user data, redirect)
+        localStorage.setItem("userID", user.id); // Store user ID in local storage
+        // Redirect to the appropriate page or display a success message
       } else {
         // Handle signup error (e.g., display error message)
       }
+    } catch (error) {
+      // Handle network errors
+    }
+  };
+
+  const authenticatedFetch = async (url, options = {}) => {
+    const userID = localStorage.getItem("userID");
+    const token = `Bearer ${userID}`; // Assuming you're using Bearer tokens
+
+    options.headers = {
+      ...options.headers,
+      Authorization: token,
+    };
+
+    try {
+      const response = await fetch(url, options);
+      return response;
     } catch (error) {
       // Handle network errors
     }
