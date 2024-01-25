@@ -22,6 +22,18 @@ function NavBar() {
     margin: "5px",
   };
 
+  const logoutStyle = {
+    color: "white",
+    backgroundColor: "#A8672A",
+    borderRadius: "10px",
+    padding: "10px",
+    textDecoration: "none",
+    margin: "5px",
+    display: "inline-block",
+    fontFamily: "Figtree",
+    height: "21px",
+  };
+
   const logoStyle = { position: "relative" };
 
   const overlayStyle = {
@@ -65,7 +77,7 @@ function NavBar() {
         <NavLink to="/badges" style={linkStyle}>
           My Climbing Passport
         </NavLink>
-        <Typography onClick={handleClick} style={linkStyle}>
+        <Typography onClick={handleClick} style={logoutStyle}>
           Logout
         </Typography>
       </Container>
