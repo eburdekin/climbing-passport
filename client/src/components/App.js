@@ -4,13 +4,11 @@ import Home from "../pages/Home";
 import Explore from "../pages/Explore";
 import About from "../pages/About";
 import ClimbingPassport from "../pages/ClimbingPassport";
-import Logout from "./Logout";
 import Login from "./Login";
 
 function App() {
   return (
     <Router>
-      {/* <Navbar /> */}
       <main>
         <Switch>
           <Route exact path="/">
@@ -24,9 +22,6 @@ function App() {
           </Route>
           <Route exact path="/badges">
             <ClimbingPassport />
-          </Route>
-          <Route exact path="/logout">
-            <Logout />
           </Route>
           <Route exact path="/login">
             <Login />
