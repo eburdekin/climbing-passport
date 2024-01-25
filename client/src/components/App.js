@@ -28,7 +28,7 @@ function App() {
             <About />
           </Route>
           <Route exact path="/badges">
-            <ClimbingPassport />
+            <ClimbingPassport user={user} setUser={setUser} />
           </Route>
           <Route exact path="/login">
             <Login />

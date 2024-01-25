@@ -32,6 +32,7 @@ function NavBar({ user, setUser }) {
     display: "inline-block",
     fontFamily: "Figtree",
     height: "21px",
+    cursor: "pointer",
   };
 
   const logoStyle = { position: "relative" };

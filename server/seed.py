@@ -24,8 +24,14 @@ if __name__ == "__main__":
         # print("Creating climbers...")
         # commenting out while I work through user authorization
 
-        # climber1 = Climber(name="Meaghan", email="meaghan@test.com", password="test")
-        # climber2 = Climber(name="Eileen", email="eileen@test.com", password="test")
+        # climber1 = Climber(
+        #     name="Meaghan",
+        #     email="meaghan@test.com",
+        #     password="test")
+        # climber2 = Climber(
+        #     name="Eileen",
+        #     email="eileen@test.com",
+        #     password="test")
         # climbers = [climber1, climber2]
 
         print("Creating mountains...")
@@ -334,22 +340,34 @@ if __name__ == "__main__":
 
         # print("Creating badges...")
         # b1 = Badge(
-        #     climber=climber1, mountain=mountain2, date="10/31/2023", completed="Yes"
+        #     climber=climber1,
+        #     mountain=mountain2,
+        #     date="10/31/2023",
+        #     completed="Attempted"
         # )
         # b2 = Badge(
         #     climber=climber1,
         #     mountain=mountain5,
         #     date="05/27/2023",
-        #     completed="Attempted",
+        #     completed="Completed",
         # )
         # b3 = Badge(
-        #     climber=climber1, mountain=mountain6, date="09/15/2022", completed="No"
+        #     climber=climber1,
+        #     mountain=mountain6,
+        #     date="09/15/2022",
+        #     completed="To Be Conquered"
         # )
         # b4 = Badge(
-        #     climber=climber1, mountain=mountain1, date="01/10/2024", completed="Yes"
+        #     climber=climber1,
+        #     mountain=mountain1,
+        #     date="01/10/2024",
+        #     completed="Attempted"
         # )
         # b5 = Badge(
-        #     climber=climber1, mountain=mountain8, date="07/31/2023", completed="No"
+        #     climber=climber1,
+        #     mountain=mountain8,
+        #     date="07/31/2023",
+        #     completed="Completed"
         # )
         # b6 = Badge(
         #     climber=climber1,
@@ -358,7 +376,10 @@ if __name__ == "__main__":
         #     completed="Attempted",
         # )
         # b7 = Badge(
-        #     climber=climber2, mountain=mountain14, date="10/31/2023", completed="Yes"
+        #     climber=climber2,
+        #     mountain=mountain14,
+        #     date="10/31/2023",
+        #     completed="To Be Conquered"
         # )
         # b8 = Badge(
         #     climber=climber2,
@@ -367,13 +388,22 @@ if __name__ == "__main__":
         #     completed="Attempted",
         # )
         # b9 = Badge(
-        #     climber=climber2, mountain=mountain18, date="09/15/2022", completed="No"
+        #     climber=climber2,
+        #     mountain=mountain18,
+        #     date="09/15/2022",
+        #     completed="Completed"
         # )
         # b10 = Badge(
-        #     climber=climber2, mountain=mountain19, date="01/10/2024", completed="Yes"
+        #     climber=climber2,
+        #     mountain=mountain19,
+        #     date="01/10/2024",
+        #     completed="Completed"
         # )
         # b11 = Badge(
-        #     climber=climber2, mountain=mountain23, date="07/31/2023", completed="No"
+        #     climber=climber2,
+        #     mountain=mountain23,
+        #     date="07/31/2023",
+        #     completed="To Be Conquered"
         # )
         # badges = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]
         # db.session.add_all(climbers)

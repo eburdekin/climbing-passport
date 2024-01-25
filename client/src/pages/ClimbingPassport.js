@@ -5,8 +5,9 @@ import Header from "../components/Header";
 import Badge from "../components/Badge";
 import "react-datepicker/dist/react-datepicker.css";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-function ClimbingPassport() {
+function ClimbingPassport({ user, setUser }) {
   //Will set as "badges" when auth is connected
   const [mountains, setBadges] = useState([]);
 
@@ -22,7 +23,15 @@ function ClimbingPassport() {
       <Header />
       <NavBar />
       <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
-        <h1>My Climbing Passport</h1>
+        {user && setUser.name ? (
+          <div style={{ padding: "15px", fontFamily: "Figtree" }}>
+            <Typography variant="h4">
+              {user.name}'s Climbing Passport
+            </Typography>
+          </div>
+        ) : (
+          ""
+        )}
       </Container>
       {mountains.map((mountain) => (
         <Badge key={mountain.id} mountain={mountain} />

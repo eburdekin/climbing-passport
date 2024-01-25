@@ -20,7 +20,7 @@ export default function Badge({ mountain, selectedMountain }) {
 
   const BadgeListItem = styled("li")({
     listStyle: "none",
-    padding: "20px",
+    padding: "50px",
     marginBottom: "20px",
     marginTop: "20px",
     borderRadius: "5px",
@@ -82,7 +82,6 @@ export default function Badge({ mountain, selectedMountain }) {
     position: "absolute",
     top: "5px",
     right: "10px",
-    color: "black",
   };
 
   const formStyle = {
@@ -192,7 +191,7 @@ export default function Badge({ mountain, selectedMountain }) {
             >
               <MenuItem value="Attempted">Attempted</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
-              <MenuItem value="SummitPlan">Summit Plan</MenuItem>
+              <MenuItem value="SummitPlan">To Be Conquered</MenuItem>
             </TextField>
             <br />
             <Button
