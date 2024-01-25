@@ -9,10 +9,6 @@ export default function Signup() {
     password: "",
   });
 
-  //   const handleChange = (event) => {
-  //     setFormData({ ...formData, [event.target.name]: event.target.value });
-  //   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
