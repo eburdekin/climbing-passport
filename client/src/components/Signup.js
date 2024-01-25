@@ -13,7 +13,7 @@ export default function Signup() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5555/signup", {
+      const response = await fetch("/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -29,23 +29,8 @@ export default function Signup() {
     } catch (error) {
       // Handle network errors
     }
-  };
 
-  const authenticatedFetch = async (url, options = {}) => {
-    const userID = localStorage.getItem("userID");
-    const token = `Bearer ${userID}`; // Assuming you're using Bearer tokens
-
-    options.headers = {
-      ...options.headers,
-      Authorization: token,
-    };
-
-    try {
-      const response = await fetch(url, options);
-      return response;
-    } catch (error) {
-      // Handle network errors
-    }
+    // set user, navigate to new page - use setUser as props
   };
 
   return (
@@ -53,18 +38,16 @@ export default function Signup() {
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
         <input
-          type="email"
+          // type="email"
           value={formData.name}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
         />
         <label>Email:</label>
         <input
-          type="password"
+          // type="text"
           value={formData.email}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           required
         />
         <label>Password:</label>
@@ -74,7 +57,7 @@ export default function Signup() {
           onChange={(e) =>
             setFormData({
               ...formData,
-              confirmPassword: e.target.value,
+              password: e.target.value,
             })
           }
           required
