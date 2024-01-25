@@ -24,8 +24,9 @@ function About() {
         <br />
         <h3>
           Explore crags and add them to your badge collection to create a unique
-          climbing passport to showcase your achievements. If a badge needs to
-          be updated or deleted, this can be done with the click of a button.
+          climbing passport to showcase your achievements and goals. If a badge
+          needs to be updated or deleted, this can be done with the click of a
+          button.
         </h3>
         <br />
         <h2>Let the ascent begin, and climb on.</h2>

@@ -134,7 +134,7 @@ export default function Mountain({ mountain, selectedMountain }) {
             >
               <MenuItem value="Attempted">Attempted</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
-              <MenuItem value="SummitPlan">Summit Plan</MenuItem>
+              <MenuItem value="SummitPlan">To Be Conquered</MenuItem>
             </TextField>
             <br />
             <Button
