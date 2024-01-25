@@ -254,7 +254,7 @@ class BadgesById(Resource):
         badge = Badge.query.filter_by(id=id).first()
         if badge is None:
             return make_response({"error": "Badge not found"}, 404)
-        return make_response(badge.to_dict(), 200)
+        return make_response(badge.to_dict(only=("id", "climbers", "mountains")), 200)
 
     def delete(self, id):
         badge = Badge.query.filter_by(id=id).first()

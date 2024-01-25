@@ -109,7 +109,7 @@ export default function Mountain({ mountain, selectedMountain }) {
             X
           </Button>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Add Badge
+            Add Badge to Climbing Passport
           </Typography>
           <br />
           <form style={formStyle}>

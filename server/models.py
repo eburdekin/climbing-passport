@@ -103,6 +103,21 @@ class Badge(db.Model, SerializerMixin):
     climber = db.relationship("Climber", back_populates="badges")
     mountain = db.relationship("Mountain", back_populates="badges")
 
+    def mountain_name(self):
+        return self.mountain.name
+
+    def mountain_location(self):
+        return self.mountain.location
+
+    def mountain_grade(self):
+        return self.mountain.grade
+
+    def mountain_type(self):
+        return self.mountain.type
+
+    def climber_name(self):
+        return self.climber.name
+
     # Serialization rules
 
     serialize_rules = (
