@@ -51,18 +51,19 @@ class Signup(Resource):
 
             # successfully adds climber to Climbers db
             # user_id isn't added to Cookies - need to troubleshoot
-
             session["user_id"] = climber_id
 
             return climber.to_dict(), 201
 
+        except ValueError as e:
+            return make_response({"error": e.__str__()}, 400)
         except IntegrityError:
             return {"error": "422 Unprocessable Entity"}, 422
 
 
 class CheckSession(Resource):
     def get(self):
-        user_id = session["user_id"]
+        user_id = session.get("user_id")
         if user_id:
             climber = Climber.query.filter(Climber.id == user_id).first()
             return climber.to_dict(), 200
@@ -89,7 +90,7 @@ class Login(Resource):
 
 class Logout(Resource):
     def delete(self):
-        session["user_id"] = None
+        session.clear()
 
         return {}, 204
 
