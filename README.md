@@ -33,7 +33,7 @@ Contains the following components:
 
 Contains three models: Climber, Mountain, and Badge. A Climber has many Mountain(s) through Badge(s), a Mountain has many Climber(s) through Badge(s), and a Badge belongs to a Climber and belongs to a Mountain. All of a climber's badges are contained on the frontend as a collection in the My Climbing Passport tab.
 
-<img src="Relationships.png" />
+<img src="https://i.ibb.co/dDkHG7c/Relationships.png" />
 
 <h1>Using this Program</h1>
 

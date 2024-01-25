@@ -38,10 +38,11 @@ export default function Badge({ mountain, selectedMountain }) {
       left: 0,
       right: 0,
       bottom: 0,
-      background: `url('https://i.ibb.co/8j0vyFT/Badgelogo.png')`, // Replace 'path/to/your/photo.png' with the actual path to your PNG photo
+      background: `url('https://i.ibb.co/xhMvZFs/badgelogo2.png')`,
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
-      zIndex: -1, // Place the photo behind the border
+      zIndex: -1,
+      opacity: "0.75",
     },
   });
 
@@ -132,7 +133,10 @@ export default function Badge({ mountain, selectedMountain }) {
         <div>
           <Button
             onClick={handleClick}
-            sx={{ color: "brown", "&:hover": { backgroundColor: "#b9c6cc" } }}
+            sx={{
+              color: "brown",
+              "&:hover": { backgroundColor: "#b9c6cc" },
+            }}
           >
             {" "}
             Edit
