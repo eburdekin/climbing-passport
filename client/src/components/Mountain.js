@@ -14,8 +14,12 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function Mountain({ mountain, selectedMountain }) {
   const [open, setOpen] = useState(false);
-  const [date, setDate] = useState(null);
-  const [status, setStatus] = useState("");
+  const [formData, setFormData] = useState({
+    climber_id: "",
+    mountain_id: "",
+    date: "",
+    status: "",
+  });
 
   const MountainListItem = styled("li")({
     listStyle: "none",
@@ -61,16 +65,34 @@ export default function Mountain({ mountain, selectedMountain }) {
   const handleClick = () => {
     setOpen(!open);
     // Reset input values when modal is opened
-    setDate(null);
-    setStatus("");
+    // setDate(null);
+    // setStatus("");
   };
 
   const handleClose = () => setOpen(false);
 
-  const handleSubmit = () => {
-    // Handle the submission logic here
-    // You can use the values of 'selectedDate' and 'status'
-    // Close the modal after submitting
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/badges", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        localStorage.setItem("userID", user.id); // Store user ID in local storage
+        // Redirect to the appropriate page or display a success message
+        setFormData(formData);
+      } else {
+        // Handle signup error (e.g., display error message)
+      }
+    } catch (error) {
+      // Handle network errors
+    }
+
+    // set user, navigate to new page - use setUser as props
     setOpen(false);
   };
 
@@ -118,8 +140,8 @@ export default function Mountain({ mountain, selectedMountain }) {
             </Typography>
             <DatePicker
               label="Date"
-              selected={date}
-              onChange={(date) => setDate(date)}
+              selected={formData.date}
+              onChange={(date) => setFormData(date)}
               renderInput={(params) => (
                 <TextField {...params} style={{ marginBottom: "10px" }} />
               )}
@@ -128,8 +150,8 @@ export default function Mountain({ mountain, selectedMountain }) {
             <TextField
               select
               label="Status"
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
+              value={formData.status}
+              onChange={(e) => setFormData(e.target.value)}
               sx={{ mt: 2 }}
             >
               <MenuItem value="Attempted">Attempted</MenuItem>

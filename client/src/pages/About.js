@@ -6,12 +6,11 @@ import Header from "../components/Header";
 // material ui components
 import Container from "@mui/material/Container";
 
-function About() {
+function About({ user, setUser }) {
   return (
     <>
       <Header />
-      <NavBar />
-
+      <NavBar user={user} setUser={setUser} />
       <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
         <br />
         <h1>Welcome to 'Send It!'- Your Personal Climbing Passport</h1>

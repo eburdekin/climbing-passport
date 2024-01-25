@@ -8,7 +8,7 @@ import Map from "../components/Map";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 
-function Explore() {
+function Explore( { user, setUser } ) {
   const [mountains, setMountains] = useState([]);
   const [selectedMountain, setSelectedMountain] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,7 +35,7 @@ function Explore() {
   return (
     <>
       <Header />
-      <NavBar />
+      <NavBar user={user} setUser={setUser} />
       <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
         <br />
         <TextField
