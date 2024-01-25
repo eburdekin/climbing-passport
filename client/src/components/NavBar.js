@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-function NavBar() {
+function NavBar({ user, setUser }) {
   const navStyle = {
     padding: "10px",
     width: "100%",
@@ -53,6 +53,7 @@ function NavBar() {
 
       if (response.ok) {
         localStorage.removeItem("userID");
+        setUser(null);
       } else {
         // Handle signup error (e.g., display error message)
       }
@@ -77,9 +78,13 @@ function NavBar() {
         <NavLink to="/badges" style={linkStyle}>
           My Climbing Passport
         </NavLink>
-        <Typography onClick={handleClick} style={logoutStyle}>
-          Logout
-        </Typography>
+        {user && user.name ? (
+          <Typography onClick={handleClick} style={logoutStyle}>
+            Logout
+          </Typography>
+        ) : (
+          ""
+        )}
       </Container>
       <Container style={logoStyle}>
         <img

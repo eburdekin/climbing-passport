@@ -14,7 +14,7 @@ function Home({ user, setUser }) {
   return (
     <>
       <Header />
-      <NavBar />
+      <NavBar user={user} setUser={setUser} />
       <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
         <header>{/* Mountain photo with logo in the middle*/}</header>
         <br />
