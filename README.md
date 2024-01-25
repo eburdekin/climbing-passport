@@ -19,14 +19,23 @@ Built using React for the frontend and Python for the backend, "Send It!" seamle
 Contains the following components:
 
 <ul>
-    <li>About.js</li>
     <li>App.js</li>
-    <li>ClimbingPassport.js</li>
-    <li>Explore.js</li>
-    <li>Home.js</li>
+    <li>Badge</li>
+    <li>Header</li>
     <li>Login.js</li>
-    <li>Logout.js</li>
+    <li>Map.js</li>
+    <li>Mountain.js</li>
     <li>NavBar.js</li>
+    <li>SignUp.js</li>
+</ul>
+
+Contains the following pages:
+
+<ul>
+  <li>About</li>
+  <li>ClimbingPassport.js</li>
+  <li>Explore.js</li>
+  <li>Home.js</li>
 </ul>
 
 <h3>Server</h3>
