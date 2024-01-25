@@ -8,9 +8,9 @@ import Login from "../components/Login";
 
 // material ui components
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-function Home() {
-
+function Home({ user, setUser }) {
   return (
     <>
       <Header />
@@ -28,20 +28,23 @@ function Home() {
             width: "100%",
           }}
         ></div>
+        {user && user.name ? (
+          <Typography variant="h4">Hello {user.name}!</Typography>
+        ) : (
+          <div className="forms-container">
+            <div className="form-section existing-user">
+              <h3>Existing users:</h3>
+              <br />
+              <Login />
+            </div>
+            <div className="form-section new-user">
+              <h3>New users:</h3>
+              <br />
+              <Signup user={user} setUser={setUser} />
+            </div>
+          </div>
+        )}
       </Container>
-
-      <div className="forms-container">
-        <div className="form-section existing-user">
-          <h3>Existing users:</h3>
-          <br />
-          <Login />
-        </div>
-        <div className="form-section new-user">
-          <h3>New users:</h3>
-          <br />
-          <Signup />
-        </div>
-      </div>
     </>
   );
 }

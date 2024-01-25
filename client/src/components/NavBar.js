@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // material ui components
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 function NavBar() {
   const navStyle = {
@@ -30,6 +32,24 @@ function NavBar() {
     transform: "translate(-50%, -50%)",
   };
 
+  const handleClick = async (event) => {
+    try {
+      const response = await fetch("/logout", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.ok) {
+        localStorage.removeItem("userID");
+      } else {
+        // Handle signup error (e.g., display error message)
+      }
+    } catch (error) {
+      // Handle network errors
+    }
+    // set user, navigate to new page - use setUser as props
+  };
+
   return (
     <>
       <Container maxWidth="md" style={navStyle}>
@@ -45,9 +65,9 @@ function NavBar() {
         <NavLink to="/badges" style={linkStyle}>
           My Climbing Passport
         </NavLink>
-        <NavLink to="/" style={linkStyle}>
+        <Typography onClick={handleClick} style={linkStyle}>
           Logout
-        </NavLink>
+        </Typography>
       </Container>
       <Container style={logoStyle}>
         <img

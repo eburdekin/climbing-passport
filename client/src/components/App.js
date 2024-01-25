@@ -14,13 +14,12 @@ function App() {
       .then((u) => setUser(u));
   }, []);
 
-  console.log(user);
   return (
     <Router>
       <main>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home user={user} setUser={setUser} />
           </Route>
           <Route exact path="/explore">
             <Explore />

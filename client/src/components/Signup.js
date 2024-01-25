@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 // import { Link } from "react-router-dom";
 
-export default function Signup() {
+export default function Signup({ user, setUser }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,6 +23,7 @@ export default function Signup() {
         const user = await response.json();
         localStorage.setItem("userID", user.id); // Store user ID in local storage
         // Redirect to the appropriate page or display a success message
+        setUser(user);
       } else {
         // Handle signup error (e.g., display error message)
       }
