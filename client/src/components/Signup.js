@@ -30,7 +30,6 @@ export default function Signup({ user, setUser }) {
     } catch (error) {
       // Handle network errors
     }
-
     // set user, navigate to new page - use setUser as props
   };
 

@@ -21,7 +21,10 @@ function Home({ user, setUser }) {
             maxWidth="md"
             sx={{ width: "100%", textAlign: "center", marginTop: "80px" }}
           >
-            <Typography variant="h4">
+            <Typography
+              variant="h4"
+              style={{ padding: "15px", fontFamily: "Figtree" }}
+            >
               Welcome, {user.name}! Time to work on those projects.
             </Typography>
           </Container>

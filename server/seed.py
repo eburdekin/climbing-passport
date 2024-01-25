@@ -17,22 +17,19 @@ if __name__ == "__main__":
         # so you can run the seed file multiple times without having duplicate entries in your database
 
         print("Deleting data...")
-        Climber.query.delete()
+        # Climber.query.delete()
         Mountain.query.delete()
         Badge.query.delete()
 
-        # print("Creating climbers...")
-        # commenting out while I work through user authorization
+        print("Creating climbers...")
 
-        # climber1 = Climber(
-        #     name="Meaghan",
-        #     email="meaghan@test.com",
-        #     password="test")
-        # climber2 = Climber(
-        #     name="Eileen",
-        #     email="eileen@test.com",
-        #     password="test")
-        # climbers = [climber1, climber2]
+        climber1 = Climber(
+            name="Meaghan", email="meaghan@test.com", _password_hash="test"
+        )
+        climber2 = Climber(
+            name="Eileen", email="eileen@test.com", _password_hash="test"
+        )
+        climbers = [climber1, climber2]
 
         print("Creating mountains...")
         mountain1 = Mountain(
@@ -406,7 +403,7 @@ if __name__ == "__main__":
         #     completed="To Be Conquered"
         # )
         # badges = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]
-        # db.session.add_all(climbers)
+        db.session.add_all(climbers)
         db.session.add_all(mountains)
         # db.session.add_all(badges)
         db.session.commit()

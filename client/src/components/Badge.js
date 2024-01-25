@@ -12,7 +12,7 @@ import { styled } from "@mui/system";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function Badge({ mountain, selectedMountain }) {
+export default function Badge({ badge }) {
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState(null);
   const [status, setStatus] = useState("");
@@ -119,15 +119,15 @@ export default function Badge({ mountain, selectedMountain }) {
   };
 
   return (
-    <BadgeListItem key={mountain.id}>
+    <BadgeListItem key={badge.id}>
       <span>
-        <div style={{ marginTop: "50px" }}>{mountain.name}</div>
+        <div style={{ marginTop: "50px" }}>{badge.mountain.name}</div>
         <div>---</div>
-        <div>{mountain.location}</div>
+        <div>{badge.mountain.location}</div>
         <div>---</div>
-        <div>{mountain.grade}</div>
+        <div>{badge.mountain.grade}</div>
         <div>---</div>
-        <div>{mountain.type}</div>
+        <div>{badge.mountain.type}</div>
         <div>---</div>
         <div>
           <Button

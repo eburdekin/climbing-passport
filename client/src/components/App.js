@@ -22,10 +22,10 @@ function App() {
             <Home user={user} setUser={setUser} />
           </Route>
           <Route exact path="/explore">
-            <Explore />
+            <Explore user={user} setUser={setUser} />
           </Route>
           <Route exact path="/about">
-            <About />
+            <About user={user} setUser={setUser} />
           </Route>
           <Route exact path="/badges">
             <ClimbingPassport user={user} setUser={setUser} />
