@@ -1,39 +1,49 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 
 export default function Login() {
+  const [existingUser, setExistingUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleExistingUserSubmit = (e) => {
+    e.preventDefault();
+    // Handle existing user form submission logic here
+    // Redirect to /login after submission
+  };
+
   return (
     <Box
-      height={50}
-      width={20}
-      my={4}
-      display="flex"
-      alignItems="center"
-      gap={4}
+    // height={50}
+    // width={20}
+    // my={4}
+    // display="flex"
+    // alignItems="center"
+    // gap={4}
     >
       {/* <form onSubmit={handleSubmit}> */}
-      <form>
-        <label htmlFor="email">Email:</label>
-
+      <form onSubmit={handleExistingUserSubmit}>
+        <label>Email:</label>
         <input
           type="email"
-          id="loginemail"
-          // value={formData.email}
-          // onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          value={existingUser.email}
+          onChange={(e) =>
+            setExistingUser({ ...existingUser, email: e.target.value })
+          }
+          required
         />
-
-        <label htmlFor="password">Password:</label>
-
+        <label>Password:</label>
         <input
           type="password"
-          id="loginpassword"
-          // value={formData.password}
-          // onChange={(e) =>
-          //   setFormData({ ...formData, password: e.target.value })
+          value={existingUser.password}
+          onChange={(e) =>
+            setExistingUser({ ...existingUser, password: e.target.value })
+          }
+          required
         />
-
-        <button type="submit">Log In</button>
+        <button type="submit">Submit</button>
       </form>
     </Box>
   );

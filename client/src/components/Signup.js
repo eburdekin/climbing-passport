@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 // import { Link } from "react-router-dom";
 
 export default function Signup() {
@@ -49,14 +50,14 @@ export default function Signup() {
 
   return (
     <Box
-      height={50}
-      width={20}
-      my={4}
-      display="flex"
-      alignItems="center"
-      gap={4}
+    // height={50}
+    // width={20}
+    // my={4}
+    // display="flex"
+    // alignItems="center"
+    // gap={4}
     >
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
 
         <input
@@ -86,6 +87,38 @@ export default function Signup() {
         />
 
         <button type="submit">Sign Up</button>
+      </form> */}
+      <form onSubmit={handleSubmit}>
+        <label>Name:</label>
+        <input
+          type="email"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          required
+        />
+        <label>Email:</label>
+        <input
+          type="password"
+          value={formData.email}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
+          required
+        />
+        <label>Password:</label>
+        <input
+          type="password"
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              confirmPassword: e.target.value,
+            })
+          }
+          required
+        />
+        <br />
+        <button type="submit">Submit</button>
       </form>
     </Box>
   );
