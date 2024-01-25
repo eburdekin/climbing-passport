@@ -15,15 +15,7 @@ export default function Login() {
   };
 
   return (
-    <Box
-    // height={50}
-    // width={20}
-    // my={4}
-    // display="flex"
-    // alignItems="center"
-    // gap={4}
-    >
-      {/* <form onSubmit={handleSubmit}> */}
+    <Box>
       <form onSubmit={handleExistingUserSubmit}>
         <label>Email:</label>
         <input

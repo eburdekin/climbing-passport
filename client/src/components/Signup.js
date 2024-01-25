@@ -49,45 +49,7 @@ export default function Signup() {
   };
 
   return (
-    <Box
-    // height={50}
-    // width={20}
-    // my={4}
-    // display="flex"
-    // alignItems="center"
-    // gap={4}
-    >
-      {/* <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-
-        <input
-          type="name"
-          id="name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        />
-        <label htmlFor="email">Email:</label>
-
-        <input
-          type="email"
-          id="email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-
-        <label htmlFor="password">Password:</label>
-
-        <input
-          type="password"
-          id="password"
-          value={formData.password}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
-        />
-
-        <button type="submit">Sign Up</button>
-      </form> */}
+    <Box>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
         <input
