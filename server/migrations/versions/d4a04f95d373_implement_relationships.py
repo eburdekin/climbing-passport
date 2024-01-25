@@ -1,8 +1,8 @@
-"""classes
+"""implement relationships
 
-Revision ID: 21255a33ea41
+Revision ID: d4a04f95d373
 Revises: 
-Create Date: 2024-01-24 14:45:55.867779
+Create Date: 2024-01-24 15:44:48.230911
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '21255a33ea41'
+revision = 'd4a04f95d373'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -33,6 +33,7 @@ def upgrade():
     sa.Column('grade', sa.String(), nullable=False),
     sa.Column('latitude', sa.Integer(), nullable=False),
     sa.Column('longitude', sa.Integer(), nullable=False),
+    sa.Column('image', sa.String(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('badges',

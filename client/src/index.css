@@ -21,6 +21,10 @@ body.loaded {
   opacity: 1;
 }
 
+h3 {
+  font-weight: light;
+}
+
 .home-container {
   text-align: center;
 }

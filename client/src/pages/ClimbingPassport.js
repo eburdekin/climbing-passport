@@ -42,13 +42,15 @@ function ClimbingPassport() {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000000",
-    boxShadow: 24,
-    borderRadius: "5px",
-    p: 4,
+    height: 300,
+    border: "2px solid #000",
+    boxShadow: "none",
+    p: 2,
     textAlign: "center",
-    transition: "background-color 0.5s ease", // Add this line for the transition effect
+    borderRadius: "5px",
+    backgroundColor: "#b9c6cc",
+    overflow: "auto",
+    borderRadius: "5px",
   };
 
   const buttonStyle = {
@@ -92,9 +94,19 @@ function ClimbingPassport() {
         <span>
           {/* {mountain.name}, {mountain.location}, {mountain.type},{" "}
           {mountain.grade} */}
-          <Button onClick={handleClick} sx={{ color: "brown" }}>
+          <Button
+            onClick={handleClick}
+            sx={{ color: "brown", "&:hover": { backgroundColor: "#b9c6cc" } }}
+          >
             {" "}
-            + Edit badge
+            Edit
+          </Button>
+          <Button
+            onClick={handleClick}
+            sx={{ color: "brown", "&:hover": { backgroundColor: "#b9c6cc" } }}
+          >
+            {" "}
+            Delete
           </Button>
           <Modal
             open={open}
@@ -104,14 +116,15 @@ function ClimbingPassport() {
             aria-describedby="modal-modal-description"
             transitioncomponent={Slide}
             transitionduration={1000}
+            hideBackdrop={true}
           >
             <Box>
               <Button onClick={handleClose} style={buttonStyle}>
                 X
               </Button>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
+              {/* <Typography id="modal-modal-title" variant="h6" component="h2">
                 Add Badge
-              </Typography>
+              </Typography> */}
               <br />
               <form style={formStyle}>
                 <Typography id="datepicker-title" component="h3">
@@ -141,7 +154,11 @@ function ClimbingPassport() {
                 <Button
                   onClick={handleSubmit}
                   variant="contained"
-                  sx={{ mt: 2 }}
+                  sx={{
+                    mt: 2,
+                    backgroundColor: "#263940",
+                    "&:hover": { backgroundColor: "#3b545d" },
+                  }}
                 >
                   Submit
                 </Button>

@@ -41,8 +41,13 @@ const Map = ({ mountains, onMarkerClick }) => {
     shadowAnchor: [22, 94],
   });
 
-  const popupStyle = {
-    width: "100px",
+  const generatePopupContent = (mountain) => {
+    return `<div style="width: 200px; text-align: center;">
+    <h2>${mountain.name}</h2>
+    <img src=${mountain.image} width="100px"></img>
+    <p>Location: ${mountain.location}</p>
+    <p>Type: ${mountain.type}</p>
+    <p>Grade: ${mountain.grade}</p></div>`;
   };
 
   useEffect(() => {
@@ -73,16 +78,13 @@ const Map = ({ mountains, onMarkerClick }) => {
     }
 
     mountains.forEach((mountain) => {
-      const popupContent = `<div style=${popupStyle}>
-        <h2>${mountain.name}</h2>
-        <img src="https://yogatoendaddiction.files.wordpress.com/2014/04/mountain.jpg" width="50px"></img>
-        <p>Location: ${mountain.location}</p>
-        <p>Type: ${mountain.type}</p>
-        <p>Grade: ${mountain.grade}</p></div>`;
+      const popupContent = generatePopupContent(mountain);
 
       const marker = L.marker([mountain.latitude, mountain.longitude], {
         icon: getIconByType(mountain.type),
-      }).bindPopup(popupContent);
+      })
+        .bindPopup(popupContent)
+        .openPopup();
 
       switch (mountain.type.toLowerCase()) {
         case "trad":
@@ -103,7 +105,8 @@ const Map = ({ mountains, onMarkerClick }) => {
       // layerControl.addOverlay(parks, "Parks");
 
       marker.on("click", function (e) {
-        map.setView(e.latlng);
+        const offsetLatLng = L.latLng(e.latlng.lat, e.latlng.lng);
+        map.setView(offsetLatLng);
       });
     });
 

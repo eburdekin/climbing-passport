@@ -25,20 +25,24 @@ export default function Mountain({ mountain, selectedMountain }) {
     borderRadius: "5px",
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start",
+    justifyContent: "space-between",
+    alignItems: "center",
   });
 
   const modalStyle = {
-    // position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: "background.paper",
+    height: 300,
     border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
+    boxShadow: "none",
+    p: 2,
     textAlign: "center",
+    borderRadius: "5px",
+    backgroundColor: "#b9c6cc",
+    overflow: "auto",
+    borderRadius: "5px",
   };
 
   const buttonStyle = {
@@ -72,65 +76,81 @@ export default function Mountain({ mountain, selectedMountain }) {
 
   return (
     <MountainListItem key={mountain.id}>
-      <span>
-        {mountain.name}, {mountain.location}, {mountain.type}, {mountain.grade}
+      <span style={{ padding: "0 20px", width: "100%" }}>
+        <span style={{ marginRight: "8px" }}>{mountain.name} |</span>
+        <span style={{ marginRight: "8px" }}>{mountain.location} |</span>
+        <span style={{ marginRight: "8px" }}>{mountain.grade} |</span>
+        <span style={{ marginRight: "8px" }}>{mountain.type} </span>
         <Button
           onClick={handleClick}
-          sx={{ color: "brown" }}
+          sx={{
+            color: "brown",
+            padding: "5px",
+            "&:hover": { backgroundColor: "#b9c6cc" },
+          }}
           variant="outlined"
         >
           {" "}
-          + Add badge
+          +
         </Button>
-        <Modal
-          open={open}
-          sx={modalStyle}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-          transitioncomponent={Slide}
-          transitionduration={1000}
-        >
-          <Box>
-            <Button onClick={handleClose} style={buttonStyle}>
-              X
-            </Button>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Add Badge
-            </Typography>
-            <br />
-            <form style={formStyle}>
-              <Typography id="datepicker-title" component="h3">
-                Select a date
-              </Typography>
-              <DatePicker
-                label="Date"
-                selected={date}
-                onChange={(date) => setDate(date)}
-                renderInput={(params) => (
-                  <TextField {...params} style={{ marginBottom: "10px" }} />
-                )}
-              />
-              <br />
-              <TextField
-                select
-                label="Status"
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}
-                sx={{ mt: 2 }}
-              >
-                <MenuItem value="Attempted">Attempted</MenuItem>
-                <MenuItem value="Completed">Completed</MenuItem>
-                <MenuItem value="SummitPlan">Summit Plan</MenuItem>
-              </TextField>
-              <br />
-              <Button onClick={handleSubmit} variant="contained" sx={{ mt: 2 }}>
-                Submit
-              </Button>
-            </form>
-          </Box>
-        </Modal>
       </span>
+      <Modal
+        open={open}
+        sx={modalStyle}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        transitioncomponent={Slide}
+        transitionduration={1000}
+        hideBackdrop={true}
+      >
+        <Box>
+          <Button onClick={handleClose} style={buttonStyle}>
+            X
+          </Button>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Add Badge
+          </Typography>
+          <br />
+          <form style={formStyle}>
+            <Typography id="datepicker-title" component="h3">
+              Select a date
+            </Typography>
+            <DatePicker
+              label="Date"
+              selected={date}
+              onChange={(date) => setDate(date)}
+              renderInput={(params) => (
+                <TextField {...params} style={{ marginBottom: "10px" }} />
+              )}
+            />
+            <br />
+            <TextField
+              select
+              label="Status"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              sx={{ mt: 2 }}
+            >
+              <MenuItem value="Attempted">Attempted</MenuItem>
+              <MenuItem value="Completed">Completed</MenuItem>
+              <MenuItem value="SummitPlan">Summit Plan</MenuItem>
+            </TextField>
+            <br />
+            <Button
+              onClick={handleSubmit}
+              variant="contained"
+              sx={{
+                mt: 2,
+                backgroundColor: "#263940",
+                "&:hover": { backgroundColor: "#3b545d" },
+              }}
+            >
+              Submit
+            </Button>
+          </form>
+        </Box>
+      </Modal>
       {selectedMountain && selectedMountain.id === mountain.id && (
         <div>
           {/* Display detailed information about the selected mountain */}
