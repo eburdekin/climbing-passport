@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 // import { Link } from "react-router-dom";
 
 export default function Signup() {
@@ -8,10 +9,6 @@ export default function Signup() {
     email: "",
     password: "",
   });
-
-  //   const handleChange = (event) => {
-  //     setFormData({ ...formData, [event.target.name]: event.target.value });
-  //   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,7 +21,8 @@ export default function Signup() {
 
       if (response.ok) {
         const user = await response.json();
-        // Handle successful signup (e.g., store user data, redirect)
+        localStorage.setItem("userID", user.id); // Store user ID in local storage
+        // Redirect to the appropriate page or display a success message
       } else {
         // Handle signup error (e.g., display error message)
       }
@@ -33,45 +31,56 @@ export default function Signup() {
     }
   };
 
+  const authenticatedFetch = async (url, options = {}) => {
+    const userID = localStorage.getItem("userID");
+    const token = `Bearer ${userID}`; // Assuming you're using Bearer tokens
+
+    options.headers = {
+      ...options.headers,
+      Authorization: token,
+    };
+
+    try {
+      const response = await fetch(url, options);
+      return response;
+    } catch (error) {
+      // Handle network errors
+    }
+  };
+
   return (
-    <Box
-      height={50}
-      width={20}
-      my={4}
-      display="flex"
-      alignItems="center"
-      gap={4}
-    >
+    <Box>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-
-        <input
-          type="name"
-          id="name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        />
-        <label htmlFor="email">Email:</label>
-
+        <label>Name:</label>
         <input
           type="email"
-          id="email"
-          value={formData.email}
+          value={formData.name}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          required
         />
-
-        <label htmlFor="password">Password:</label>
-
+        <label>Email:</label>
         <input
           type="password"
-          id="password"
-          value={formData.password}
+          value={formData.email}
           onChange={(e) =>
             setFormData({ ...formData, password: e.target.value })
           }
+          required
         />
-
-        <button type="submit">Sign Up</button>
+        <label>Password:</label>
+        <input
+          type="password"
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              confirmPassword: e.target.value,
+            })
+          }
+          required
+        />
+        <br />
+        <button type="submit">Submit</button>
       </form>
     </Box>
   );

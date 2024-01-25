@@ -1,39 +1,56 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 
 export default function Login() {
-  return (
-    <Box
-      height={50}
-      width={20}
-      my={4}
-      display="flex"
-      alignItems="center"
-      gap={4}
-    >
-      {/* <form onSubmit={handleSubmit}> */}
-      <form>
-        <label htmlFor="email">Email:</label>
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5555/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        localStorage.setItem("userID", user.id); // Store user ID in local storage
+        // Redirect to the appropriate page or display a success message
+      } else {
+        // Handle signup error (e.g., display error message)
+      }
+    } catch (error) {
+      // Handle network errors
+    }
+    // Handle existing user form submission logic here
+    // Redirect to /login after submission
+  };
+
+  return (
+    <Box>
+      <form onSubmit={handleSubmit}>
+        <label>Email:</label>
         <input
           type="email"
-          id="loginemail"
-          // value={formData.email}
-          // onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          required
         />
-
-        <label htmlFor="password">Password:</label>
-
+        <label>Password:</label>
         <input
           type="password"
-          id="loginpassword"
-          // value={formData.password}
-          // onChange={(e) =>
-          //   setFormData({ ...formData, password: e.target.value })
+          value={formData.password}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
+          required
         />
-
-        <button type="submit">Log In</button>
+        <button type="submit">Submit</button>
       </form>
     </Box>
   );
