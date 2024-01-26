@@ -125,8 +125,8 @@ export default function Mountain({ mountain, selectedMountain, user }) {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        transitioncomponent={Slide}
-        transitionduration={1000}
+        // transitioncomponent={Slide}
+        // transitionduration={1000}
         hideBackdrop={true}
       >
         <Box>
@@ -163,12 +163,14 @@ export default function Mountain({ mountain, selectedMountain, user }) {
               )}
             /> */}
             <TextField
-              label="date"
+              autoFocus
+              label="Date"
               value={formData.date}
               onChange={(e) =>
                 setFormData({ ...formData, date: e.target.value })
               }
               sx={{ mt: 2 }}
+              required
             ></TextField>
             <br />
             <TextField
@@ -179,6 +181,7 @@ export default function Mountain({ mountain, selectedMountain, user }) {
                 setFormData({ ...formData, completed: e.target.value })
               }
               sx={{ mt: 2 }}
+              required
             >
               <MenuItem value="Attempted">Attempted</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
@@ -199,12 +202,6 @@ export default function Mountain({ mountain, selectedMountain, user }) {
           </form>
         </Box>
       </Modal>
-      {selectedMountain && selectedMountain.id === mountain.id && (
-        <div>
-          {/* Display detailed information about the selected mountain */}
-          {/* You can use selectedMountain information here */}
-        </div>
-      )}
     </MountainListItem>
   );
 }

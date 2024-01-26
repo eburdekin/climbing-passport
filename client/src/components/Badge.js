@@ -246,12 +246,14 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
             /> */}
             <br />
             <TextField
-              label="date"
+              autoFocus
+              label="Date"
               value={formData.date}
               onChange={(e) =>
                 setFormData({ ...formData, date: e.target.value })
               }
               sx={{ mt: 2 }}
+              required
             ></TextField>
             <br />
             <TextField
@@ -262,6 +264,7 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
                 setFormData({ ...formData, completed: e.target.value })
               }
               sx={{ mt: 2 }}
+              required
             >
               <MenuItem value="Attempted">Attempted</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
@@ -297,7 +300,7 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
             X
           </Button>
           <br />
-          <Typography variant="h6" component="h2">
+          <Typography variant="h6" component="h2" fontFamily="Figtree">
             Are you sure you want to delete this badge?
           </Typography>
           <br />
@@ -310,7 +313,7 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
               "&:hover": { backgroundColor: "#3b545d" },
             }}
           >
-            Confirm Delete
+            Confirm
           </Button>
         </Box>
       </Modal>
