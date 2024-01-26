@@ -101,6 +101,10 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
     setDeleteConfirmationOpen(true);
   };
 
+  const exitDeleteConfirmation = () => {
+    setDeleteConfirmationOpen(false);
+  };
+
   const handleDelete = async (e) => {
     try {
       const response = await fetch(`/badges/${badge.id}`, {
@@ -262,6 +266,9 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
         hideBackdrop={true}
       >
         <Box>
+          <Button onClick={exitDeleteConfirmation} style={buttonStyle}>
+            X
+          </Button>
           <br />
           <Typography variant="h6" component="h2">
             Are you sure you want to delete this badge?
