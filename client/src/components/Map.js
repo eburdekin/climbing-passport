@@ -126,9 +126,16 @@ const Map = ({ mountains, onMarkerClick }) => {
     return () => {
       map.remove();
     };
-  }, [mountains, onMarkerClick, defaultIcon]);
+  }, [
+    mountains,
+    onMarkerClick,
+    defaultIcon,
+    boulderingIcon,
+    sportIcon,
+    tradIcon,
+  ]);
 
-  return <div id="map" style={{ height: "400px" }} />;
+  return <div id="map" style={{ height: "380px" }} />;
 };
 
 export default Map;

@@ -24,15 +24,15 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
 
   const BadgeListItem = styled("li")({
     listStyle: "none",
-    padding: "50px",
+    padding: "45px",
     marginBottom: "20px",
     marginTop: "20px",
     borderRadius: "5px",
     textAlign: "center",
     display: "inline-grid",
     margin: "5px",
-    width: "300px",
-    height: "350px",
+    width: "275px",
+    height: "325px",
     position: "relative", // Add this line to position the photo overlay
 
     "&:before": {
@@ -53,6 +53,11 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
   const badgeNameStyle = {
     fontFamily: "Figtree",
     fontWeight: "bold",
+    textShadow: "2px 2px 5px rgba(255, 255, 255, 0.5)",
+  };
+
+  const badgeInfoStyle = {
+    fontFamily: "Figtree",
   };
 
   const modalStyle = {
@@ -95,6 +100,11 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
     mt: 2,
     display: "flex",
     flexDirection: "column",
+  };
+
+  const titleStyle = {
+    fontFamily: "Figtree",
+    fontWeight: "bold",
   };
 
   const handleEdit = (e) => {
@@ -156,22 +166,24 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
   return (
     <BadgeListItem key={badge.id}>
       <span>
-        <div style={{ marginTop: "50px" }}>
+        <div style={{ marginTop: "55px" }}>
           <Typography style={badgeNameStyle} variant="h6">
             {badge.mountain.name}
           </Typography>
-        </div>
-        <div>{badge.mountain.location}</div>
-        <div>---</div>
-        <div>
-          {badge.mountain.grade} {badge.mountain.type}
-        </div>
-        <div>---</div>
-        <div>
-          {badge.completed} on {badge.date}
-        </div>
-        <div>---</div>
-        <div>
+          <Typography style={badgeInfoStyle}>
+            {badge.mountain.location}
+          </Typography>
+          <div>---</div>
+          <div>
+            {badge.mountain.grade} {badge.mountain.type}
+          </div>
+          <div>---</div>
+          <div>
+            <i>
+              {badge.completed} on {badge.date}
+            </i>
+          </div>
+          <div>---</div>
           <Button
             onClick={handleEdit}
             sx={{
@@ -182,14 +194,12 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
             {" "}
             Edit
           </Button>
-        </div>
-        <div>
           <Button
             onClick={handleDeleteConfirmation}
             sx={{ color: "brown", "&:hover": { backgroundColor: "#b9c6cc" } }}
           >
             {" "}
-            Delete
+            Drop
           </Button>
         </div>
       </span>
@@ -207,12 +217,23 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
           <Button onClick={handleClose} style={buttonStyle}>
             X
           </Button>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            style={titleStyle}
+          >
             Edit Badge
           </Typography>
+          for {badge.mountain.name}
+          <br />
           <br />
           <form style={formStyle}>
-            <Typography id="datepicker-title" component="h3">
+            <Typography
+              id="datepicker-title"
+              component="h3"
+              fontFamily="Figtree"
+            >
               Select a date
             </Typography>
             {/* <DatePicker
@@ -244,7 +265,7 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
             >
               <MenuItem value="Attempted">Attempted</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
-              <MenuItem value="SummitPlan">To Be Conquered</MenuItem>
+              <MenuItem value="To Be Conquered">To Be Conquered</MenuItem>
             </TextField>
             <br />
             <Button
