@@ -38,7 +38,7 @@ export default function Mountain({ mountain, selectedMountain, user }) {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    height: 300,
+    height: 340,
     border: "2px solid #000",
     boxShadow: "none",
     p: 2,
