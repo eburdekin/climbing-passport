@@ -7,7 +7,7 @@ const Map = ({ mountains, onMarkerClick }) => {
 
   const defaultIcon = L.icon({
     iconUrl: "mountainlogo.png",
-    iconSize: [50, 50],
+    iconSize: [70, 70],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
     shadowSize: [68, 95],
@@ -16,7 +16,7 @@ const Map = ({ mountains, onMarkerClick }) => {
 
   const tradIcon = L.icon({
     iconUrl: "1.png",
-    iconSize: [50, 50],
+    iconSize: [70, 70],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
     shadowSize: [68, 95],
@@ -25,7 +25,7 @@ const Map = ({ mountains, onMarkerClick }) => {
 
   const sportIcon = L.icon({
     iconUrl: "2.png",
-    iconSize: [50, 50],
+    iconSize: [70, 70],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
     shadowSize: [68, 95],
@@ -34,7 +34,7 @@ const Map = ({ mountains, onMarkerClick }) => {
 
   const boulderingIcon = L.icon({
     iconUrl: "3.png",
-    iconSize: [50, 50],
+    iconSize: [70, 70],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
     shadowSize: [68, 95],
