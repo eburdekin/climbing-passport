@@ -151,16 +151,6 @@ class Badge(db.Model, SerializerMixin):
             raise ValueError(
                 "Invalid date format. Please provide a valid date in the format MM/DD/YYYY"
             )
-        
-    @validates("completed")
-    def validate_completed(self, key, value):
-        allowed_statuses = {"Attempted", "Completed", "To Be Conquered"}
-        if value not in allowed_statuses:
-            raise ValueError(
-                f"Invalid mountain type. Allowed types are: {', '.join(allowed_statuses)}"
-            )
-        return value
-
 
     @validates("climber_id")
     def validate_climber_id(self, key, value):
@@ -179,5 +169,4 @@ class Badge(db.Model, SerializerMixin):
     # Not sure what to return for this:
 
     def __repr__(self):
-        retur
-        n f"<Badge ${self.id}>"
+        return f"<Badge ${self.id}>"
