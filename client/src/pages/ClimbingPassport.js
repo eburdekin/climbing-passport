@@ -6,7 +6,7 @@ import Badge from "../components/Badge";
 import "react-datepicker/dist/react-datepicker.css";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { unstable_ClassNameGenerator } from "@mui/material";
+// import { unstable_ClassNameGenerator } from "@mui/material";
 
 function ClimbingPassport({ user, setUser }) {
   //Will set as "badges" when auth is connected
@@ -20,7 +20,7 @@ function ClimbingPassport({ user, setUser }) {
   }, []);
 
   const filteredBadges =
-    user && badges.filter((badge) => badge.climber_id == user.id);
+    user && badges.filter((badge) => badge.climber_id === user.id);
 
   return (
     <>
