@@ -59,16 +59,16 @@ function ClimbingPassport({ user, setUser }) {
             Time to log in and get started!
           </Typography>
         )}
+        {filteredBadges &&
+          filteredBadges.map((badge) => (
+            <Badge
+              key={badge.id}
+              badge={badge}
+              onDeleteBadge={handleDeleteBadge}
+              onEditBadge={handleEditBadge}
+            />
+          ))}
       </Container>
-      {filteredBadges &&
-        filteredBadges.map((badge) => (
-          <Badge
-            key={badge.id}
-            badge={badge}
-            onDeleteBadge={handleDeleteBadge}
-            onEditBadge={handleEditBadge}
-          />
-        ))}
     </>
   );
 }
