@@ -75,7 +75,7 @@ class Login(Resource):
     def post(self):
         request_json = request.get_json()
 
-        email = request_json.get("username")
+        email = request_json.get("email")
         password = request_json.get("password")
 
         climber = Climber.query.filter(Climber.email == email).first()
