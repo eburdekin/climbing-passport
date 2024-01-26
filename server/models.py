@@ -44,6 +44,15 @@ class Climber(db.Model, SerializerMixin):
         "-_password_hash",
     )
 
+    # Validation
+
+    @validates("email")
+    def validate_email(self, key, value):
+        existing_climber = Climber.query.filter(Climber.email == value).first()
+        if existing_climber:
+            raise ValueError("Email already exists. Please choose a different email.")
+        return value
+
     def __repr__(self):
         return f"<Climber {self.name}>"
 
