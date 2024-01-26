@@ -4,14 +4,14 @@
 from random import randint, choice as rc
 
 # Remote library imports
-from faker import Faker
+# from faker import Faker
 
 # Local imports
 from app import app
 from models import db, Climber, Mountain, Badge
 
 if __name__ == "__main__":
-    fake = Faker()
+    # fake = Faker()
     with app.app_context():
         # This will delete any existing rows
         # so you can run the seed file multiple times without having duplicate entries in your database
