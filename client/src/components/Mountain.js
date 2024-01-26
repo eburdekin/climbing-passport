@@ -12,13 +12,13 @@ import { styled } from "@mui/system";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function Mountain({ mountain, selectedMountain }) {
+export default function Mountain({ mountain, selectedMountain, user }) {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
-    climber_id: "",
-    mountain_id: "",
+    climber_id: user.id,
+    mountain_id: mountain.id,
     date: "",
-    status: "",
+    completed: "",
   });
 
   const MountainListItem = styled("li")({
@@ -46,7 +46,6 @@ export default function Mountain({ mountain, selectedMountain }) {
     borderRadius: "5px",
     backgroundColor: "#b9c6cc",
     overflow: "auto",
-    borderRadius: "5px",
   };
 
   const buttonStyle = {
@@ -84,7 +83,6 @@ export default function Mountain({ mountain, selectedMountain }) {
         const user = await response.json();
         localStorage.setItem("userID", user.id); // Store user ID in local storage
         // Redirect to the appropriate page or display a success message
-        setFormData(formData);
       } else {
         // Handle signup error (e.g., display error message)
       }
@@ -138,20 +136,32 @@ export default function Mountain({ mountain, selectedMountain }) {
             <Typography id="datepicker-title" component="h3">
               Select a date
             </Typography>
-            <DatePicker
+            {/* <DatePicker
               label="Date"
               selected={formData.date}
-              onChange={(date) => setFormData(date)}
+              onChange={(e) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
               renderInput={(params) => (
                 <TextField {...params} style={{ marginBottom: "10px" }} />
               )}
-            />
+            /> */}
+            <TextField
+              label="date"
+              value={formData.date}
+              onChange={(e) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
+              sx={{ mt: 2 }}
+            ></TextField>
             <br />
             <TextField
               select
               label="Status"
-              value={formData.status}
-              onChange={(e) => setFormData(e.target.value)}
+              value={formData.completed}
+              onChange={(e) =>
+                setFormData({ ...formData, completed: e.target.value })
+              }
               sx={{ mt: 2 }}
             >
               <MenuItem value="Attempted">Attempted</MenuItem>

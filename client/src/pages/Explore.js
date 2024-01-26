@@ -8,7 +8,7 @@ import Map from "../components/Map";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 
-function Explore( { user, setUser } ) {
+function Explore({ user, setUser }) {
   const [mountains, setMountains] = useState([]);
   const [selectedMountain, setSelectedMountain] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -61,6 +61,7 @@ function Explore( { user, setUser } ) {
             key={mountain.id}
             mountain={mountain}
             selectedMountain={selectedMountain}
+            user={user}
           />
         ))}
       </Container>
