@@ -51,7 +51,7 @@ function ClimbingPassport({ user, setUser }) {
     <>
       <Header />
       <NavBar user={user} setUser={setUser} />
-      <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
+      <Container maxWidth="lg" sx={{ width: "100%", textAlign: "center" }}>
         {user && user.name ? (
           <div style={{ padding: "15px" }}>
             <Typography
