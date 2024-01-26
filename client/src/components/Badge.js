@@ -55,7 +55,7 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    height: 300,
+    height: 375,
     border: "2px solid #000",
     boxShadow: "none",
     p: 2,
