@@ -38,7 +38,7 @@ export default function Badge({ badge }) {
       left: 0,
       right: 0,
       bottom: 0,
-      background: `url('https://i.ibb.co/xhMvZFs/badgelogo2.png')`,
+      background: `url('https://i.ibb.co/KFtKBXR/Untitled-design-1-3.png')`,
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       zIndex: -1,
