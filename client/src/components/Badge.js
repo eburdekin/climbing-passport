@@ -59,7 +59,6 @@ export default function Badge({ badge }) {
     borderRadius: "5px",
     backgroundColor: "#b9c6cc",
     overflow: "auto",
-    borderRadius: "5px",
   };
 
   const deleteConfirmationModalStyle = {
@@ -75,7 +74,6 @@ export default function Badge({ badge }) {
     borderRadius: "5px",
     backgroundColor: "#b9c6cc",
     overflow: "auto",
-    borderRadius: "5px",
   };
 
   const buttonStyle = {
