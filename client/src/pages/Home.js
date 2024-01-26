@@ -46,7 +46,7 @@ function Home({ user, setUser }) {
             <div className="form-section existing-user">
               <h3>Existing users:</h3>
               <br />
-              <Login />
+              <Login user={user} setUser={setUser} />
             </div>
             <div className="form-section new-user">
               <h3>New users:</h3>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 
-export default function Login() {
+export default function Login({ user, setUser }) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -11,7 +11,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5555/login", {
+      const response = await fetch("/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -19,7 +19,8 @@ export default function Login() {
 
       if (response.ok) {
         const user = await response.json();
-        localStorage.setItem("userID", user.id); // Store user ID in local storage
+        localStorage.setItem("userID", user.id);
+        setUser(user); // Store user ID in local storage
         // Redirect to the appropriate page or display a success message
       } else {
         // Handle signup error (e.g., display error message)
