@@ -242,6 +242,7 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
               }
               sx={{ mt: 2 }}
             >
+              12
               <MenuItem value="Attempted">Attempted</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
               <MenuItem value="SummitPlan">To Be Conquered</MenuItem>
