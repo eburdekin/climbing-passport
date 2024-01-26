@@ -46,9 +46,14 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       zIndex: -1,
-      opacity: "0.75",
+      opacity: "0.70",
     },
   });
+
+  const badgeNameStyle = {
+    fontFamily: "Figtree",
+    fontWeight: "bold",
+  };
 
   const modalStyle = {
     top: "50%",
@@ -152,9 +157,10 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
     <BadgeListItem key={badge.id}>
       <span>
         <div style={{ marginTop: "50px" }}>
-          <b>{badge.mountain.name}</b>
+          <Typography style={badgeNameStyle} variant="h6">
+            {badge.mountain.name}
+          </Typography>
         </div>
-        <div>---</div>
         <div>{badge.mountain.location}</div>
         <div>---</div>
         <div>
