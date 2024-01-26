@@ -43,14 +43,15 @@ export default function Signup({ user, setUser }) {
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
         />
-        <label>Email:</label>
+        <br />
+        <label style={{ marginTop: "15px" }}>Email:</label>
         <input
           // type="text"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           required
         />
-        <label>Password:</label>
+        <label style={{ marginTop: "15px" }}>Password:</label>
         <input
           type="password"
           value={formData.password}

@@ -70,6 +70,7 @@ function ClimbingPassport({ user, setUser }) {
               sx={{
                 width: "200px",
                 marginBottom: 5,
+                marginTop: "20px",
                 "& fieldset": { borderColor: "gray" },
                 "&:focus": { "& fieldset": { borderColor: "black" } },
               }}
@@ -83,9 +84,13 @@ function ClimbingPassport({ user, setUser }) {
         ) : (
           <Typography
             variant="h4"
-            style={{ padding: "15px", fontFamily: "Figtree" }}
+            style={{
+              padding: "15px",
+              fontFamily: "Figtree",
+              marginTop: "30px",
+            }}
           >
-            Time to log in and get started!
+            <b>Time to log in and get started!</b>
           </Typography>
         )}
         {filteredBadges &&

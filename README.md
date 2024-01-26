@@ -50,8 +50,6 @@ To begin this program, you'll use the following commands:
 
 <ul>
   <li>pipenv install && pipenv shell</li>
-  <li>flask db init</li>
-  <li>npm install --prefix client</li>
   <li>cd server</li>
   <li>flask db init</li>
   <li>flask db migrate -m "implement relationships"</li>
@@ -68,21 +66,21 @@ Open up an additional terminal and use the following commands:
 </ul>
 
 <h3>Home</h1>
-<p>Prompts a user to log into an existing account or create a new one. The user is unable to navigate to the various tabs unless logged in. Once logged in, the home page will welcome the user and they can navigate to the various tabs as needed.</p>
+<p>Prompts a user to log into an existing account or create a new one. The user can navigate to the various tabs if not logged in, but will not see any information on the "My Climbing Passport" tab. Once logged in, the home page will welcome the user and they can navigate to the various tabs as needed.</p>
 
 <h3>About</h3>
 <p>Explains the functionalities of the website.
 
 <h3>Explore</h3>
-<p>The user can add a new badge to their climbing passport and explore various climbs using the map and crag area list. Once the plus sign next to the specific climb is clicked, a modal will populate and they will be prompted to add the date and whether the climb has been completed or not. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab and include the climber_id and mountain_id on the backend.</p>
+<p>The user can add a new badge to their climbing passport and explore various climbs using the map and crag area list. Once the plus sign next to the specific climb is clicked, a modal will populate and they will be prompted to add the date and whether the status of the climb. Once this new climb has been added, it will be saved under the "My Climbing Passport" tab and persist the climber_id and mountain_id data.</p>
 
 <h3>My Climbing Passport</h3>
-<p>This page contains a collection of all the user's badges. A badge can be edited or deleted on this page. If the update button is selected, a modal will populate and the user can edit the existing information. Once this information is saved, it will automatically update on the page.
+<p>This page contains a collection of all the user's badges. A badge can be edited or deleted on this page. If the edit button is selected, a modal will populate and the user can edit the date and status of the climb. Once this information is saved, it will automatically update on the page.
 </p>
-<p>If the delete button is clicked, the badge will automatically be removed from the page.</p>
+<p>If the delete button is clicked, the user will be prompted to confirm this deletion and then the badge will automatically be removed from the page.</p>
 
 <h3>Send It!</h3>
 <p>Takes the user back to the personalized homepage.</p>
 
 <h3>Logout</h3>
-<p>Takes the user back to the original home page, where they will be prompted to log in or create a new account.</p>
+<p>Logs the user out.</p>
