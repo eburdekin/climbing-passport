@@ -7,6 +7,7 @@ import Map from "../components/Map";
 // Material-UI components
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
 
 function Explore({ user, setUser }) {
   const [mountains, setMountains] = useState([]);
@@ -36,7 +37,10 @@ function Explore({ user, setUser }) {
     <>
       <Header />
       <NavBar user={user} setUser={setUser} />
-      <Container maxWidth="md" sx={{ width: "100%", textAlign: "center" }}>
+      <Container
+        maxWidth="lg"
+        sx={{ width: "100%", textAlign: "center", marginBottom: "50px" }}
+      >
         <br />
         <TextField
           label="Search Mountains"
@@ -50,20 +54,27 @@ function Explore({ user, setUser }) {
             "&:focus": { "& fieldset": { borderColor: "black" } }, // Set the outline color when focused
           }}
         />
-        <Map
-          mountains={filteredMountains}
-          onMarkerClick={handleMarkerClick}
-          selectedMountain={selectedMountain}
-        />
-        <br />
-        {filteredMountains.map((mountain) => (
-          <Mountain
-            key={mountain.id}
-            mountain={mountain}
-            selectedMountain={selectedMountain}
-            user={user}
-          />
-        ))}
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Map
+              mountains={filteredMountains}
+              onMarkerClick={handleMarkerClick}
+              selectedMountain={selectedMountain}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Container sx={{ overflowY: "auto", maxHeight: 400 }}>
+              {filteredMountains.map((mountain) => (
+                <Mountain
+                  key={mountain.id}
+                  mountain={mountain}
+                  selectedMountain={selectedMountain}
+                  user={user}
+                />
+              ))}
+            </Container>
+          </Grid>
+        </Grid>
       </Container>
     </>
   );

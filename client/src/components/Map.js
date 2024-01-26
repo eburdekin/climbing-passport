@@ -120,7 +120,7 @@ const Map = ({ mountains, onMarkerClick }) => {
       Bouldering: bouldering,
     };
 
-    const layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+    L.control.layers(baseMaps, overlayMaps).addTo(map);
 
     // Cleanup function to destroy the map when the component is unmounted
     return () => {
