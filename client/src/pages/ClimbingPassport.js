@@ -22,6 +22,13 @@ function ClimbingPassport({ user, setUser }) {
   const filteredBadges =
     user && badges.filter((badge) => badge.climber_id === user.id);
 
+  const handleDeleteBadge = (deletedBadgeId) => {
+    // Remove the deleted badge from the parent component's state
+    setBadges((badges) =>
+      badges.filter((badge) => badge.id !== deletedBadgeId)
+    );
+  };
+
   return (
     <>
       <Header />
@@ -46,7 +53,13 @@ function ClimbingPassport({ user, setUser }) {
         )}
       </Container>
       {filteredBadges &&
-        filteredBadges.map((badge) => <Badge key={badge.id} badge={badge} />)}
+        filteredBadges.map((badge) => (
+          <Badge
+            key={badge.id}
+            badge={badge}
+            onDeleteBadge={handleDeleteBadge}
+          />
+        ))}
     </>
   );
 }

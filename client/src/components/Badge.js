@@ -12,7 +12,7 @@ import { styled } from "@mui/system";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function Badge({ badge, handleBadgeDelete }) {
+export default function Badge({ badge, onDeleteBadge }) {
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState(null);
   const [status, setStatus] = useState("");
@@ -99,8 +99,22 @@ export default function Badge({ badge, handleBadgeDelete }) {
     setDeleteConfirmationOpen(true);
   };
 
-  const handleDelete = (e) => {
-    handleBadgeDelete(badge.id);
+  const handleDelete = async (e) => {
+    try {
+      const response = await fetch(`/badges/${badge.id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.ok) {
+        onDeleteBadge(badge.id);
+      } else {
+        // Handle signup error (e.g., display error message)
+      }
+    } catch (error) {
+      // Handle network errors
+    }
+    setDeleteConfirmationOpen(false);
   };
 
   const handleClose = () => {
