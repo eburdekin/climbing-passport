@@ -12,10 +12,14 @@ import { styled } from "@mui/system";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function Badge({ badge, onDeleteBadge }) {
+export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
   const [open, setOpen] = useState(false);
-  const [date, setDate] = useState(null);
-  const [status, setStatus] = useState("");
+  const [formData, setFormData] = useState({
+    climber_id: badge.climber_id,
+    mountain_id: badge.mountain_id,
+    date: "",
+    completed: "",
+  });
   const [deleteConfirmationOpen, setDeleteConfirmationOpen] = useState(false);
 
   const BadgeListItem = styled("li")({
@@ -88,11 +92,9 @@ export default function Badge({ badge, onDeleteBadge }) {
     flexDirection: "column",
   };
 
-  const handleClick = () => {
+  const handleEdit = (e) => {
     setOpen(!open);
     // Reset input values when modal is opened
-    setDate(null);
-    setStatus("");
   };
 
   const handleDeleteConfirmation = () => {
@@ -122,27 +124,46 @@ export default function Badge({ badge, onDeleteBadge }) {
     setDeleteConfirmationOpen(false);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
     // Handle the submission logic here
-    // You can use the values of 'selectedDate' and 'status'
-    // Close the modal after submitting
+    try {
+      const response = await fetch(`/badges/${badge.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        onEditBadge(badge.id, formData);
+      } else {
+        // Handle signup error (e.g., display error message)
+      }
+    } catch (error) {
+      // Handle network errors
+    }
     setOpen(false);
   };
 
   return (
     <BadgeListItem key={badge.id}>
       <span>
-        <div style={{ marginTop: "50px" }}>{badge.mountain.name}</div>
+        <div style={{ marginTop: "50px" }}>
+          <b>{badge.mountain.name}</b>
+        </div>
         <div>---</div>
         <div>{badge.mountain.location}</div>
         <div>---</div>
-        <div>{badge.mountain.grade}</div>
+        <div>
+          {badge.mountain.grade} {badge.mountain.type}
+        </div>
         <div>---</div>
-        <div>{badge.mountain.type}</div>
+        <div>
+          {badge.completed} on {badge.date}
+        </div>
         <div>---</div>
         <div>
           <Button
-            onClick={handleClick}
+            onClick={handleEdit}
             sx={{
               color: "brown",
               "&:hover": { backgroundColor: "#b9c6cc" },
@@ -184,20 +205,31 @@ export default function Badge({ badge, onDeleteBadge }) {
             <Typography id="datepicker-title" component="h3">
               Select a date
             </Typography>
-            <DatePicker
+            {/* <DatePicker
               label="Date"
               selected={date}
               onChange={(date) => setDate(date)}
               renderInput={(params) => (
                 <TextField {...params} style={{ marginBottom: "10px" }} />
               )}
-            />
+            /> */}
+            <br />
+            <TextField
+              label="date"
+              value={formData.date}
+              onChange={(e) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
+              sx={{ mt: 2 }}
+            ></TextField>
             <br />
             <TextField
               select
               label="Status"
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
+              value={formData.completed}
+              onChange={(e) =>
+                setFormData({ ...formData, completed: e.target.value })
+              }
               sx={{ mt: 2 }}
             >
               <MenuItem value="Attempted">Attempted</MenuItem>

@@ -29,6 +29,14 @@ function ClimbingPassport({ user, setUser }) {
     );
   };
 
+  const handleEditBadge = (editedBadgeId, updatedData) => {
+    // Update the edited badge in the parent component's state
+    setBadges((badges) =>
+      badges.map((badge) =>
+        badge.id === editedBadgeId ? { ...badge, ...updatedData } : badge
+      )
+    );
+  };
   return (
     <>
       <Header />
@@ -58,6 +66,7 @@ function ClimbingPassport({ user, setUser }) {
             key={badge.id}
             badge={badge}
             onDeleteBadge={handleDeleteBadge}
+            onEditBadge={handleEditBadge}
           />
         ))}
     </>
