@@ -153,6 +153,11 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
     setOpen(false);
   };
 
+  const titleStyle = {
+    fontFamily: "Figtree",
+    fontWeight: "bold",
+  };
+
   return (
     <BadgeListItem key={badge.id}>
       <span>
@@ -207,12 +212,23 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
           <Button onClick={handleClose} style={buttonStyle}>
             X
           </Button>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            style={titleStyle}
+          >
             Edit Badge
           </Typography>
+          for {badge.mountain.name}
+          <br />
           <br />
           <form style={formStyle}>
-            <Typography id="datepicker-title" component="h3">
+            <Typography
+              id="datepicker-title"
+              component="h3"
+              fontFamily="Figtree"
+            >
               Select a date
             </Typography>
             {/* <DatePicker
