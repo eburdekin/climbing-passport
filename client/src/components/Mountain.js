@@ -23,7 +23,7 @@ export default function Mountain({ mountain, selectedMountain, user }) {
 
   const MountainListItem = styled("li")({
     listStyle: "none",
-    padding: "10px",
+    padding: "8px",
     border: "1px solid #ccc",
     marginBottom: "10px",
     borderRadius: "5px",
@@ -166,7 +166,7 @@ export default function Mountain({ mountain, selectedMountain, user }) {
             >
               <MenuItem value="Attempted">Attempted</MenuItem>
               <MenuItem value="Completed">Completed</MenuItem>
-              <MenuItem value="SummitPlan">To Be Conquered</MenuItem>
+              <MenuItem value="To Be Conquered">To Be Conquered</MenuItem>
             </TextField>
             <br />
             <Button
