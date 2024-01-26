@@ -101,8 +101,25 @@ export default function Badge({ badge }) {
     setDeleteConfirmationOpen(true);
   };
 
-  const handleDelete = () => {
-    // Perform delete logic here
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`/badges/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        // You might need to include additional headers or authentication tokens if required
+      });
+
+      if (response.ok) {
+        // Handle success (e.g., update local state or fetch updated data)
+        console.log("Badge deleted successfully");
+      } else {
+        console.error("Failed to delete badge");
+      }
+    } catch (error) {
+      // Handle network errors
+      console.error("Network error:", error);
+    }
+
     setDeleteConfirmationOpen(false);
   };
 
