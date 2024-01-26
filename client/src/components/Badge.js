@@ -46,16 +46,21 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       zIndex: -1,
-      opacity: "0.75",
+      opacity: "0.70",
     },
   });
+
+  const badgeNameStyle = {
+    fontFamily: "Figtree",
+    fontWeight: "bold",
+  };
 
   const modalStyle = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    height: 300,
+    height: 375,
     border: "2px solid #000",
     boxShadow: "none",
     p: 2,
@@ -70,7 +75,7 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 300,
-    height: 150,
+    height: 175,
     border: "2px solid #000",
     boxShadow: "none",
     p: 2,
@@ -99,6 +104,10 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
 
   const handleDeleteConfirmation = () => {
     setDeleteConfirmationOpen(true);
+  };
+
+  const exitDeleteConfirmation = () => {
+    setDeleteConfirmationOpen(false);
   };
 
   const handleDelete = async (e) => {
@@ -148,9 +157,10 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
     <BadgeListItem key={badge.id}>
       <span>
         <div style={{ marginTop: "50px" }}>
-          <b>{badge.mountain.name}</b>
+          <Typography style={badgeNameStyle} variant="h6">
+            {badge.mountain.name}
+          </Typography>
         </div>
-        <div>---</div>
         <div>{badge.mountain.location}</div>
         <div>---</div>
         <div>
@@ -262,6 +272,9 @@ export default function Badge({ badge, onDeleteBadge, onEditBadge }) {
         hideBackdrop={true}
       >
         <Box>
+          <Button onClick={exitDeleteConfirmation} style={buttonStyle}>
+            X
+          </Button>
           <br />
           <Typography variant="h6" component="h2">
             Are you sure you want to delete this badge?
