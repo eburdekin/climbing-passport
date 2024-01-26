@@ -135,7 +135,7 @@ const Map = ({ mountains, onMarkerClick }) => {
     tradIcon,
   ]);
 
-  return <div id="map" style={{ height: "400px" }} />;
+  return <div id="map" style={{ height: "380px" }} />;
 };
 
 export default Map;

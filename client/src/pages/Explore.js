@@ -63,7 +63,7 @@ function Explore({ user, setUser }) {
             />
           </Grid>
           <Grid item xs={6}>
-            <Container sx={{ overflowY: "auto", maxHeight: 400 }}>
+            <Container sx={{ overflowY: "auto", maxHeight: 380 }}>
               {filteredMountains.map((mountain) => (
                 <Mountain
                   key={mountain.id}
