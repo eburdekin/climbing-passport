@@ -58,7 +58,7 @@ function ClimbingPassport({ user, setUser }) {
               variant="h4"
               style={{ padding: "15px", fontFamily: "Figtree" }}
             >
-              {user.name}'s Climbing Passport
+              <b>{user.name}'s Climbing Passport</b>
             </Typography>
             <TextField
               label="Filter by Status"

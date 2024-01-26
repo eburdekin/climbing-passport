@@ -25,7 +25,7 @@ function Home({ user, setUser }) {
               variant="h4"
               style={{ padding: "15px", fontFamily: "Figtree" }}
             >
-              Welcome, {user.name}! Time to work on those projects.
+              <b>Welcome, {user.name}! Time to work on those projects.</b>
             </Typography>
           </Container>
         </>
@@ -44,12 +44,12 @@ function Home({ user, setUser }) {
           ></div>
           <div className="forms-container">
             <div className="form-section existing-user">
-              <h3>Existing users:</h3>
+              <h2>Ready for more? Log in:</h2>
               <br />
               <Login user={user} setUser={setUser} />
             </div>
             <div className="form-section new-user">
-              <h3>New users:</h3>
+              <h2>New here? Sign up:</h2>
               <br />
               <Signup user={user} setUser={setUser} />
             </div>
